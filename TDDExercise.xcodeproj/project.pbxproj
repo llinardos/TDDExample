@@ -12,6 +12,7 @@
 		AC7109F023368218001061EC /* TDDExercise.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7109E223368218001061EC /* TDDExercise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109F92337AD47001061EC /* FractionAdditionTests.swift */; };
 		AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FB2337ADC8001061EC /* DivisorsTests.swift */; };
+		AC7109FE2337AE10001061EC /* FractionTestsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		AC7109EF23368218001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7109F92337AD47001061EC /* FractionAdditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionAdditionTests.swift; sourceTree = "<group>"; };
 		AC7109FB2337ADC8001061EC /* DivisorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisorsTests.swift; sourceTree = "<group>"; };
+		AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionTestsUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				AC7109ED23368218001061EC /* FractionCreationTests.swift */,
+				AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */,
 				AC7109F92337AD47001061EC /* FractionAdditionTests.swift */,
 				AC7109FB2337ADC8001061EC /* DivisorsTests.swift */,
 				AC7109EF23368218001061EC /* Info.plist */,
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */,
+				AC7109FE2337AE10001061EC /* FractionTestsUtils.swift in Sources */,
 				AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */,
 				AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */,
 			);

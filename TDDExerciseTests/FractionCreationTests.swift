@@ -77,46 +77,21 @@ class FractionCreationTests: XCTestCase {
     )
   }
   
-  func fractionAsString(_ sign: Fraction.Sign, _ n: UInt, _ d: UInt) -> String {
-    let signAsString: String = {
-      switch sign {
-      case .positive: return "+"
-      case .negative: return "-"
-      }
-    }()
-    return "\(signAsString)\(n)/\(d)"
-  }
-  
-  func fractionAsString(_ f: Fraction) -> String {
-    return fractionAsString(f.sign, f.numerator, f.denominator)
-  }
-  
-  func testFractionAsString() {
-    XCTAssertEqual(fractionAsString(.positive, 1, 2), "+1/2")
-    XCTAssertEqual(fractionAsString(.negative, 1, 2), "-1/2")
-    XCTAssertEqual(fractionAsString(.positive, 10, 12), "+10/12")
-    XCTAssertEqual(fractionAsString(.negative, 10, 12), "-10/12")
-    
-    XCTAssertEqual(fractionAsString(Fraction(1, 2)), "+1/2")
-    XCTAssertEqual(fractionAsString(Fraction(-1, 2)), "-1/2")
-  }
+  // Creation Test List
+  // 1/0 = ERROR (denominator = 0)
+  // 2/0 = ERROR (denominator = 0)
+  // 100/0 = ERROR (denominator = 0)
+  // -1/0 = ERROR (denominator = 0)
+  // -2/0 = ERROR (denominator = 0)
+  // -100/0 = ERROR (denominator = 0)
+  // 0/0 = ERROR (numerator and denominator = 0)
+  // 0/1 = zero
+  // 0/2 = zero
+  // 0/100 = zero
+  // 0/-1 = zero
+  // 0/-2 = zero
+  // 0/-100 = zero
 }
-
-
-// Creation Test List
-// 1/0 = ERROR (denominator = 0)
-// 2/0 = ERROR (denominator = 0)
-// 100/0 = ERROR (denominator = 0)
-// -1/0 = ERROR (denominator = 0)
-// -2/0 = ERROR (denominator = 0)
-// -100/0 = ERROR (denominator = 0)
-// 0/0 = ERROR (numerator and denominator = 0)
-// 0/1 = zero
-// 0/2 = zero
-// 0/100 = zero
-// 0/-1 = zero
-// 0/-2 = zero
-// 0/-100 = zero
 
 func getDivisorsOf(_ n: Int) -> [Int] {
   guard n != 0 else { return [] }
