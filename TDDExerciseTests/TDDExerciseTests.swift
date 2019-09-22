@@ -62,17 +62,43 @@ class TDDExerciseTests: XCTestCase {
   }
   
   func test_init_handlesSigns() {
-    let a = Fraction(-1, 2)
-    XCTAssertTrue(a.numerator == 1 && a.denominator == 2 && a.sign == .negative)
+    assertThatFraction((-1, 2), becomes: (.negative, 1, 2))
+    assertThatFraction((1, -2), becomes: (.negative, 1, 2))
+    assertThatFraction((-1, -2), becomes: (.positive, 1, 2))
+    assertThatFraction((1, 2), becomes: (.positive, 1, 2))
+  }
+  
+  func assertThatFraction(_ params: (n: Int, d: Int), becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+    let fraction = Fraction(params.n, params.d)
+    XCTAssertTrue(
+      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
+      "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
+      file: file, line: line
+    )
+  }
+  
+  func fractionAsString(_ sign: Fraction.Sign, _ n: UInt, _ d: UInt) -> String {
+    let signAsString: String = {
+      switch sign {
+      case .positive: return "+"
+      case .negative: return "-"
+      }
+    }()
+    return "\(signAsString)\(n)/\(d)"
+  }
+  
+  func fractionAsString(_ f: Fraction) -> String {
+    return fractionAsString(f.sign, f.numerator, f.denominator)
+  }
+  
+  func testFractionAsString() {
+    XCTAssertEqual(fractionAsString(.positive, 1, 2), "+1/2")
+    XCTAssertEqual(fractionAsString(.negative, 1, 2), "-1/2")
+    XCTAssertEqual(fractionAsString(.positive, 10, 12), "+10/12")
+    XCTAssertEqual(fractionAsString(.negative, 10, 12), "-10/12")
     
-    let b = Fraction(1, -2)
-    XCTAssertTrue(b.numerator == 1 && b.denominator == 2 && b.sign == .negative)
-    
-    let c = Fraction(-1, -2)
-    XCTAssertTrue(c.numerator == 1 && c.denominator == 2 && c.sign == .positive)
-    
-    let d = Fraction(1, 2)
-    XCTAssertTrue(d.numerator == 1 && d.denominator == 2 && d.sign == .positive)
+    XCTAssertEqual(fractionAsString(Fraction(1, 2)), "+1/2")
+    XCTAssertEqual(fractionAsString(Fraction(-1, 2)), "-1/2")
   }
 }
 
