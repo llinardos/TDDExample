@@ -34,28 +34,12 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionCreatedWithParams( 1,  2, becomes: (.positive, 1, 2))
   }
   
-  func assertThatFractionCreatedWithParams(_ n: Int, _ d: Int, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
-    let fraction = Fraction(n, d)
-    XCTAssertTrue(
-      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
-      "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
-      file: file, line: line
-    )
-  }
-  
   func test_initWithExplicitSign() {
-    var f: Fraction!
-    
-    f = Fraction(.positive, 1, 2)
-    XCTAssertTrue(f.sign == .positive && f.numerator == 1 && f.denominator == 2)
-    
-    f = Fraction(.negative, 1, 2)
-    XCTAssertTrue(f.sign == .negative && f.numerator == 1 && f.denominator == 2)
-    
-    f = Fraction(.negative, 1, 2)
-    XCTAssertTrue(f.sign == .negative && f.numerator == 1 && f.denominator == 2)
+    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams(.negative, 1, 2, becomes: (.negative, 1, 2))
+    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
   }
-  
+
   // Creation Test List
   // 1/0 = ERROR (denominator = 0)
   // 2/0 = ERROR (denominator = 0)
@@ -70,4 +54,24 @@ class FractionCreationTests: XCTestCase {
   // 0/-1 = zero
   // 0/-2 = zero
   // 0/-100 = zero
+}
+
+extension FractionCreationTests {
+  func assertThatFractionCreatedWithParams(_ n: Int, _ d: Int, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+    let fraction = Fraction(n, d)
+    XCTAssertTrue(
+      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
+      "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
+      file: file, line: line
+    )
+  }
+  
+  func assertThatFractionCreatedWithParams(_ s: Fraction.Sign, _ n: UInt, _ d: UInt, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+    let fraction = Fraction(s, n, d)
+    XCTAssertTrue(
+      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
+      "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
+      file: file, line: line
+    )
+  }
 }
