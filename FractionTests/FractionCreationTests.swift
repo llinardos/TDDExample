@@ -29,7 +29,7 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionCreatedWithParams(-12, 16, simplifiesTo: Fraction(.negative, 3, 4))
   }
   
-  func test_initWithNumeratorZero_isZero() {
+  func test_isZero_returnTrue_whenNumeratorIsZero() {
     XCTAssertTrue(Fraction(0, 1).isZero())
     XCTAssertTrue(Fraction(0, 2).isZero())
     XCTAssertTrue(Fraction(0, 100).isZero())
@@ -38,12 +38,14 @@ class FractionCreationTests: XCTestCase {
     XCTAssertTrue(Fraction(0, -100).isZero())
   }
 
-  func test_initWithNumeratorNotZero_isNotZero() {
+  func test_isZero_returnsFalse_whenNumeratorIsNotZero() {
     XCTAssertFalse(Fraction(1, 2).isZero())
     XCTAssertFalse(Fraction(-1, 2).isZero())
+    XCTAssertFalse(Fraction(12123, 1).isZero())
+    XCTAssertFalse(Fraction(124, 812).isZero())
   }
   
-  func test_initWithDenominatorZero_setZeroDashZeroAndSetsHasDenominatorZeroToTrue() {
+  func test_hasDenominatorZero_returnsTrue_whenDenominatorIsZeroAndNumeratorNot() {
     assertThatFractionHasZeroDenominator(Fraction(1, 0))
     assertThatFractionHasZeroDenominator(Fraction(2, 0))
     assertThatFractionHasZeroDenominator(Fraction(100, 0))
@@ -53,7 +55,11 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionHasZeroDenominator(Fraction(0, 0))
   }
   
-  func test_hasDenominatorZero_retursFalseForRegularFractions() {
+  func test_hasDenominatorZero_returnsTrue_whenBothDenominatorAndNumeratorAreZero() {
+    assertThatFractionHasZeroDenominator(Fraction(0, 0))
+  }
+  
+  func test_hasDenominatorZero_retursFalse_whenNumeratorIsNotZeroAndDenominatorIsNotZero() {
     XCTAssertFalse(Fraction(1, 3).hasDenominatorZero())
     XCTAssertFalse(Fraction(-1, 3).hasDenominatorZero())
     XCTAssertFalse(Fraction(-1, -3).hasDenominatorZero())
