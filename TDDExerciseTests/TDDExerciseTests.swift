@@ -2,9 +2,14 @@ import XCTest
 import TDDExercise
 
 struct Fraction {
+  enum Sign {
+    case positive
+    case negative
+  }
   var numerator: UInt
   var denominator: UInt
-  private var _isPositive: Bool
+  
+  var sign: Sign
   
   init(_ numerator: Int, _ denominator: Int) {
     if let gdc = getGCDOf(numerator, denominator) {
@@ -12,21 +17,21 @@ struct Fraction {
       self.denominator = UInt(abs(denominator)/gdc)
       
       if numerator < 0 && denominator > 0 {
-        _isPositive = false
+        sign = .negative
       } else if numerator > 0 && denominator < 0 {
-        _isPositive = false
+        sign = .negative
       } else {
-        _isPositive = true
+        sign = .positive
       }
     } else {
       self.numerator = 0
       self.denominator = 0
-      self._isPositive = false
+      self.sign = .positive
     }
   }
   
   func isPositive() -> Bool {
-    return _isPositive
+    return sign == .positive
   }
 }
 
@@ -58,16 +63,16 @@ class TDDExerciseTests: XCTestCase {
   
   func test_init_handlesSigns() {
     let a = Fraction(-1, 2)
-    XCTAssertTrue(a.numerator == 1 && a.denominator == 2 && !a.isPositive())
+    XCTAssertTrue(a.numerator == 1 && a.denominator == 2 && a.sign == .negative)
     
     let b = Fraction(1, -2)
-    XCTAssertTrue(b.numerator == 1 && b.denominator == 2 && !b.isPositive())
+    XCTAssertTrue(b.numerator == 1 && b.denominator == 2 && b.sign == .negative)
     
     let c = Fraction(-1, -2)
-    XCTAssertTrue(c.numerator == 1 && c.denominator == 2 && c.isPositive())
+    XCTAssertTrue(c.numerator == 1 && c.denominator == 2 && c.sign == .positive)
     
     let d = Fraction(1, 2)
-    XCTAssertTrue(d.numerator == 1 && d.denominator == 2 && d.isPositive())
+    XCTAssertTrue(d.numerator == 1 && d.denominator == 2 && d.sign == .positive)
   }
 }
 
