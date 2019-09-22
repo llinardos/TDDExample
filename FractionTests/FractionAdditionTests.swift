@@ -2,7 +2,7 @@ import XCTest
 import Fraction
 
 class FractionAdditionTests: XCTestCase {
-  func testSumOfIntegers() {
+  func testThat_sum_sums_when_argumentsAreIntegers() {
     assertThatAdding(Fraction(0), and: Fraction(0), gives: Fraction(0))
     assertThatAdding(Fraction(1), and: Fraction(0), gives: Fraction(1))
     assertThatAdding(Fraction(0), and: Fraction(1), gives: Fraction(1))
