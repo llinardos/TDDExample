@@ -28,8 +28,4 @@ public struct Fraction {
       self.sign = .positive
     }
   }
-  
-  func isPositive() -> Bool {
-    return sign == .positive
-  }
 }
