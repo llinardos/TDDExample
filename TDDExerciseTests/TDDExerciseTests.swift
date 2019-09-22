@@ -39,10 +39,62 @@ class TDDExerciseTests: XCTestCase {
     let a = Fraction(2, 4)
     XCTAssertTrue(a.numerator == 1 && a.denominator == 2)
   }
+  
+//  func test_init_withNumeratorAndDenominatorHasCommonDivisor_simplifiesFraction() {
+//    let a = Fraction(16, 12)
+//    XCTAssertTrue(a.numerator == 4 && a.denominator == 3)
+//  }
 }
 
+func getDivisorsOf(_ n: Int) -> [Int] {
+  return [1]
+}
+
+class DivisorsTests: XCTestCase {
+  func test_getDivisors() {
+    let expectedOutputByInput: [Int: [Int]] = [
+      1: [1],
+//      2: [1,2],
+//      3: [1,3],
+//      4: [1,2,4],
+//      5: [1,5],
+//      6: [1,2,3,6],
+//      7: [1,7],
+//      8: [1,2,4,8],
+//      9: [1, 3, 9],
+//      10: [1, 5, 10],
+//      11: [1, 11],
+//      12: [1, 2, 3, 4, 6, 12],
+//      20: [1, 2, 5, 10, 20],
+//      33: [1, 3, 11, 33],
+//      100: [1, 2, 5, 10, 20, 25, 50, 100],
+//      101: [1, 101]
+    ]
+    expectedOutputByInput.forEach { (input, expectedOutput) in
+      XCTAssertEqual(getDivisorsOf(input), expectedOutput, "Expected divisors don't match.")
+    }
+  }
+}
+
+// Divisors Test List
+// 1 -> 1
+// 2 -> 1,2
+// 3 -> 1,3
+// 4 -> 1, 2, 4
+// 5 -> 1, 5
+// 6 -> 1, 2, 3, 6
+// 7 -> 1, 7
+// 8 -> 1, 2, 4, 8
+// 9 -> 1, 3, 9
+// 10 -> 1, 5, 10
+// 11 -> 1, 11
+// 12 -> 1, 2, 3, 4, 6, 12
+// 20 -> 1, 2, 5, 10, 20
+// 33 -> 1, 3, 11, 33
+// 100 -> 1, 2, 5, 10, 20, 25, 50, 100
+// 101 -> 1, 101
+
 // Creation Test List
-// (4,2) -> + 4/2 -> + 2/1 (simplifies)
 // (16,12) -> + 16/12 -> + 4/3 (simplifies denominator != 1)
 // (12,16) -> + 12/16 -> + 3/4 (simplifies less than 1)
 // (-1,2) = - 1/2 (negative numerator and positive denominator)
