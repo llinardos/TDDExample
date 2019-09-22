@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		AC7109E923368218001061EC /* Fraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7109DF23368218001061EC /* Fraction.framework */; };
 		AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109ED23368218001061EC /* FractionCreationTests.swift */; };
-		AC7109F023368218001061EC /* TDDExercise.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7109E223368218001061EC /* TDDExercise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109F92337AD47001061EC /* FractionAdditionTests.swift */; };
 		AC7109FE2337AE10001061EC /* FractionTestsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */; };
 		AC710A002337AE56001061EC /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FF2337AE56001061EC /* Fraction.swift */; };
 		AC710A112337B020001061EC /* Divisors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC710A082337B01F001061EC /* Divisors.framework */; };
-		AC710A182337B020001061EC /* Divisors.h in Headers */ = {isa = PBXBuildFile; fileRef = AC710A0A2337B01F001061EC /* Divisors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC710A1F2337B02A001061EC /* Divisors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A012337AE6B001061EC /* Divisors.swift */; };
 		AC710A232337B068001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A222337B068001061EC /* DivisorsTests.swift */; };
 		AC710A252337B08B001061EC /* Divisors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC710A082337B01F001061EC /* Divisors.framework */; };
@@ -39,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		AC7109DF23368218001061EC /* Fraction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fraction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC7109E223368218001061EC /* TDDExercise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDDExercise.h; sourceTree = "<group>"; };
 		AC7109E323368218001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7109E823368218001061EC /* FractionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7109ED23368218001061EC /* FractionCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionCreationTests.swift; sourceTree = "<group>"; };
@@ -49,7 +46,6 @@
 		AC7109FF2337AE56001061EC /* Fraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fraction.swift; sourceTree = "<group>"; };
 		AC710A012337AE6B001061EC /* Divisors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divisors.swift; sourceTree = "<group>"; };
 		AC710A082337B01F001061EC /* Divisors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Divisors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC710A0A2337B01F001061EC /* Divisors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Divisors.h; sourceTree = "<group>"; };
 		AC710A0B2337B01F001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC710A102337B01F001061EC /* DivisorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivisorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC710A172337B020001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +113,6 @@
 		AC7109E123368218001061EC /* Fraction */ = {
 			isa = PBXGroup;
 			children = (
-				AC7109E223368218001061EC /* TDDExercise.h */,
 				AC7109E323368218001061EC /* Info.plist */,
 				AC7109FF2337AE56001061EC /* Fraction.swift */,
 			);
@@ -128,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				AC7109ED23368218001061EC /* FractionCreationTests.swift */,
-				AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */,
 				AC7109F92337AD47001061EC /* FractionAdditionTests.swift */,
+				AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */,
 				AC7109EF23368218001061EC /* Info.plist */,
 			);
 			path = FractionTests;
@@ -139,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				AC710A012337AE6B001061EC /* Divisors.swift */,
-				AC710A0A2337B01F001061EC /* Divisors.h */,
 				AC710A0B2337B01F001061EC /* Info.plist */,
 			);
 			path = Divisors;
@@ -168,7 +162,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7109F023368218001061EC /* TDDExercise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +169,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC710A182337B020001061EC /* Divisors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
