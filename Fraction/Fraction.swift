@@ -1,4 +1,5 @@
 import Foundation
+import Divisors
 
 public struct Fraction {
   public enum Sign {

@@ -11,10 +11,13 @@
 		AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109ED23368218001061EC /* FractionCreationTests.swift */; };
 		AC7109F023368218001061EC /* TDDExercise.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7109E223368218001061EC /* TDDExercise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109F92337AD47001061EC /* FractionAdditionTests.swift */; };
-		AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FB2337ADC8001061EC /* DivisorsTests.swift */; };
 		AC7109FE2337AE10001061EC /* FractionTestsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */; };
 		AC710A002337AE56001061EC /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FF2337AE56001061EC /* Fraction.swift */; };
-		AC710A022337AE6B001061EC /* Divisors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A012337AE6B001061EC /* Divisors.swift */; };
+		AC710A112337B020001061EC /* Divisors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC710A082337B01F001061EC /* Divisors.framework */; };
+		AC710A182337B020001061EC /* Divisors.h in Headers */ = {isa = PBXBuildFile; fileRef = AC710A0A2337B01F001061EC /* Divisors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC710A1F2337B02A001061EC /* Divisors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A012337AE6B001061EC /* Divisors.swift */; };
+		AC710A232337B068001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A222337B068001061EC /* DivisorsTests.swift */; };
+		AC710A252337B08B001061EC /* Divisors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC710A082337B01F001061EC /* Divisors.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +27,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AC7109DE23368218001061EC;
 			remoteInfo = TDDExercise;
+		};
+		AC710A122337B020001061EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC7109D623368218001061EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC710A072337B01F001061EC;
+			remoteInfo = Divisors;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -35,10 +45,15 @@
 		AC7109ED23368218001061EC /* FractionCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionCreationTests.swift; sourceTree = "<group>"; };
 		AC7109EF23368218001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7109F92337AD47001061EC /* FractionAdditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionAdditionTests.swift; sourceTree = "<group>"; };
-		AC7109FB2337ADC8001061EC /* DivisorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisorsTests.swift; sourceTree = "<group>"; };
 		AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionTestsUtils.swift; sourceTree = "<group>"; };
 		AC7109FF2337AE56001061EC /* Fraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fraction.swift; sourceTree = "<group>"; };
 		AC710A012337AE6B001061EC /* Divisors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divisors.swift; sourceTree = "<group>"; };
+		AC710A082337B01F001061EC /* Divisors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Divisors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC710A0A2337B01F001061EC /* Divisors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Divisors.h; sourceTree = "<group>"; };
+		AC710A0B2337B01F001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC710A102337B01F001061EC /* DivisorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivisorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC710A172337B020001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC710A222337B068001061EC /* DivisorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisorsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC710A252337B08B001061EC /* Divisors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +73,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC710A052337B01F001061EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC710A0D2337B01F001061EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC710A112337B020001061EC /* Divisors.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,7 +96,10 @@
 			children = (
 				AC7109E123368218001061EC /* Fraction */,
 				AC7109EC23368218001061EC /* FractionTests */,
+				AC710A092337B01F001061EC /* Divisors */,
+				AC710A142337B020001061EC /* DivisorsTests */,
 				AC7109E023368218001061EC /* Products */,
+				AC710A242337B08B001061EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +108,8 @@
 			children = (
 				AC7109DF23368218001061EC /* Fraction.framework */,
 				AC7109E823368218001061EC /* FractionTests.xctest */,
+				AC710A082337B01F001061EC /* Divisors.framework */,
+				AC710A102337B01F001061EC /* DivisorsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +120,6 @@
 				AC7109E223368218001061EC /* TDDExercise.h */,
 				AC7109E323368218001061EC /* Info.plist */,
 				AC7109FF2337AE56001061EC /* Fraction.swift */,
-				AC710A012337AE6B001061EC /* Divisors.swift */,
 			);
 			path = Fraction;
 			sourceTree = "<group>";
@@ -95,10 +130,35 @@
 				AC7109ED23368218001061EC /* FractionCreationTests.swift */,
 				AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */,
 				AC7109F92337AD47001061EC /* FractionAdditionTests.swift */,
-				AC7109FB2337ADC8001061EC /* DivisorsTests.swift */,
 				AC7109EF23368218001061EC /* Info.plist */,
 			);
 			path = FractionTests;
+			sourceTree = "<group>";
+		};
+		AC710A092337B01F001061EC /* Divisors */ = {
+			isa = PBXGroup;
+			children = (
+				AC710A012337AE6B001061EC /* Divisors.swift */,
+				AC710A0A2337B01F001061EC /* Divisors.h */,
+				AC710A0B2337B01F001061EC /* Info.plist */,
+			);
+			path = Divisors;
+			sourceTree = "<group>";
+		};
+		AC710A142337B020001061EC /* DivisorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC710A222337B068001061EC /* DivisorsTests.swift */,
+				AC710A172337B020001061EC /* Info.plist */,
+			);
+			path = DivisorsTests;
+			sourceTree = "<group>";
+		};
+		AC710A242337B08B001061EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7109F023368218001061EC /* TDDExercise.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC710A032337B01F001061EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC710A182337B020001061EC /* Divisors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +219,42 @@
 			productReference = AC7109E823368218001061EC /* FractionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AC710A072337B01F001061EC /* Divisors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC710A192337B020001061EC /* Build configuration list for PBXNativeTarget "Divisors" */;
+			buildPhases = (
+				AC710A032337B01F001061EC /* Headers */,
+				AC710A042337B01F001061EC /* Sources */,
+				AC710A052337B01F001061EC /* Frameworks */,
+				AC710A062337B01F001061EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Divisors;
+			productName = Divisors;
+			productReference = AC710A082337B01F001061EC /* Divisors.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AC710A0F2337B01F001061EC /* DivisorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC710A1C2337B020001061EC /* Build configuration list for PBXNativeTarget "DivisorsTests" */;
+			buildPhases = (
+				AC710A0C2337B01F001061EC /* Sources */,
+				AC710A0D2337B01F001061EC /* Frameworks */,
+				AC710A0E2337B01F001061EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC710A132337B020001061EC /* PBXTargetDependency */,
+			);
+			name = DivisorsTests;
+			productName = DivisorsTests;
+			productReference = AC710A102337B01F001061EC /* DivisorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,6 +272,13 @@
 					AC7109E723368218001061EC = {
 						CreatedOnToolsVersion = 10.3;
 					};
+					AC710A072337B01F001061EC = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					AC710A0F2337B01F001061EC = {
+						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
+					};
 				};
 			};
 			buildConfigurationList = AC7109D923368218001061EC /* Build configuration list for PBXProject "TDDExercise" */;
@@ -184,6 +295,8 @@
 			targets = (
 				AC7109DE23368218001061EC /* Fraction */,
 				AC7109E723368218001061EC /* FractionTests */,
+				AC710A072337B01F001061EC /* Divisors */,
+				AC710A0F2337B01F001061EC /* DivisorsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +316,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC710A062337B01F001061EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC710A0E2337B01F001061EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -210,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC710A022337AE6B001061EC /* Divisors.swift in Sources */,
 				AC710A002337AE56001061EC /* Fraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,7 +348,22 @@
 				AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */,
 				AC7109FE2337AE10001061EC /* FractionTestsUtils.swift in Sources */,
 				AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */,
-				AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC710A042337B01F001061EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC710A1F2337B02A001061EC /* Divisors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC710A0C2337B01F001061EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC710A232337B068001061EC /* DivisorsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +374,11 @@
 			isa = PBXTargetDependency;
 			target = AC7109DE23368218001061EC /* Fraction */;
 			targetProxy = AC7109EA23368218001061EC /* PBXContainerItemProxy */;
+		};
+		AC710A132337B020001061EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC710A072337B01F001061EC /* Divisors */;
+			targetProxy = AC710A122337B020001061EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -446,6 +592,93 @@
 			};
 			name = Release;
 		};
+		AC710A1A2337B020001061EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Divisors/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.kanobius.sandbox.Divisors;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC710A1B2337B020001061EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Divisors/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.kanobius.sandbox.Divisors;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC710A1D2337B020001061EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DivisorsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.kanobius.sandbox.DivisorsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC710A1E2337B020001061EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DivisorsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.kanobius.sandbox.DivisorsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -472,6 +705,24 @@
 			buildConfigurations = (
 				AC7109F723368218001061EC /* Debug */,
 				AC7109F823368218001061EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC710A192337B020001061EC /* Build configuration list for PBXNativeTarget "Divisors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC710A1A2337B020001061EC /* Debug */,
+				AC710A1B2337B020001061EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC710A1C2337B020001061EC /* Build configuration list for PBXNativeTarget "DivisorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC710A1D2337B020001061EC /* Debug */,
+				AC710A1E2337B020001061EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
