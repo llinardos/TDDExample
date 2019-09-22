@@ -5,8 +5,13 @@ struct Fraction {
   var numerator: Int
   var denominator: Int
   init(_ numerator: Int, _ denominator: Int) {
-    self.numerator = numerator
-    self.denominator = denominator
+    if numerator % denominator == 0 {
+      self.numerator = numerator/denominator
+      self.denominator = 1
+    } else {
+      self.numerator = numerator
+      self.denominator = denominator
+    }
   }
 }
 
@@ -20,6 +25,11 @@ class TDDExerciseTests: XCTestCase {
     
     let c = Fraction(3, 2)
     XCTAssertTrue(c.numerator == 3 && c.denominator == 2)
+  }
+  
+  func test_init_withNumeratorIsMultipleOfDenominator_simplifiesFraction() {
+    let a = Fraction(4, 2)
+    XCTAssertTrue(a.numerator == 2 && a.denominator == 1)
   }
 }
 
