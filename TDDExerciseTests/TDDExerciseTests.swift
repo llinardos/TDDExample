@@ -8,6 +8,9 @@ struct Fraction {
     if numerator % denominator == 0 {
       self.numerator = numerator/denominator
       self.denominator = 1
+    } else if denominator % numerator == 0 {
+      self.numerator = 1
+      self.denominator = denominator/numerator
     } else {
       self.numerator = numerator
       self.denominator = denominator
@@ -30,6 +33,11 @@ class TDDExerciseTests: XCTestCase {
   func test_init_withNumeratorIsMultipleOfDenominator_simplifiesFraction() {
     let a = Fraction(4, 2)
     XCTAssertTrue(a.numerator == 2 && a.denominator == 1)
+  }
+  
+  func test_init_withDenominatorIsMultipleOfNumerator_simplifiesFraction() {
+    let a = Fraction(2, 4)
+    XCTAssertTrue(a.numerator == 1 && a.denominator == 2)
   }
 }
 
