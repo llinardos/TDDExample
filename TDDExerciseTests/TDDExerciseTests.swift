@@ -14,13 +14,16 @@ class TDDExerciseTests: XCTestCase {
   func test_init_setsNumeratorAndDenominatorOk() {
     let a = Fraction(1, 2)
     XCTAssertTrue(a.numerator == 1 && a.denominator == 2)
+    
+    let b = Fraction(1, 3)
+    XCTAssertTrue(b.numerator == 1 && b.denominator == 3)
+    
+    let c = Fraction(3, 2)
+    XCTAssertTrue(c.numerator == 3 && c.denominator == 2)
   }
 }
 
 // Creation Test List
-// (1,2) -> + 1/2
-// (1,3) -> + 1/3 (other denominator)
-// (3,2) -> + 3/2 (other numerator)
 // (4,2) -> + 4/2 -> + 2/1 (simplifies)
 // (16,12) -> + 16/12 -> + 4/3 (simplifies denominator != 1)
 // (12,16) -> + 12/16 -> + 3/4 (simplifies less than 1)
