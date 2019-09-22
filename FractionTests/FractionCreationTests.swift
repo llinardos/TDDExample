@@ -28,14 +28,14 @@ class FractionCreationTests: XCTestCase {
   }
   
   func test_init_handlesSigns() {
-    assertThatFraction((-1, 2),  becomes: (.negative, 1, 2))
-    assertThatFraction((1, -2),  becomes: (.negative, 1, 2))
-    assertThatFraction((-1, -2), becomes: (.positive, 1, 2))
-    assertThatFraction((1, 2),   becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams(-1,  2, becomes: (.negative, 1, 2))
+    assertThatFractionCreatedWithParams( 1, -2, becomes: (.negative, 1, 2))
+    assertThatFractionCreatedWithParams(-1, -2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams( 1,  2, becomes: (.positive, 1, 2))
   }
   
-  func assertThatFraction(_ params: (n: Int, d: Int), becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
-    let fraction = Fraction(params.n, params.d)
+  func assertThatFractionCreatedWithParams(_ n: Int, _ d: Int, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+    let fraction = Fraction(n, d)
     XCTAssertTrue(
       fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
       "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
