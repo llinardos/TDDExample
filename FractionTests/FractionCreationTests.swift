@@ -43,6 +43,19 @@ class FractionCreationTests: XCTestCase {
     )
   }
   
+  func test_initWithExplicitSign() {
+    var f: Fraction!
+    
+    f = Fraction(.positive, 1, 2)
+    XCTAssertTrue(f.sign == .positive && f.numerator == 1 && f.denominator == 2)
+    
+    f = Fraction(.negative, 1, 2)
+    XCTAssertTrue(f.sign == .negative && f.numerator == 1 && f.denominator == 2)
+    
+    f = Fraction(.negative, 1, 2)
+    XCTAssertTrue(f.sign == .negative && f.numerator == 1 && f.denominator == 2)
+  }
+  
   // Creation Test List
   // 1/0 = ERROR (denominator = 0)
   // 2/0 = ERROR (denominator = 0)
