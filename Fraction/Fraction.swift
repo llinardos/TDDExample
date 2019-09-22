@@ -40,7 +40,7 @@ public struct Fraction {
     self.init(sign, absReducedNumerator, absReducedDenominator)
   }
   
-  public init(_ integer: Int) {
+  public init(int integer: Int) {
     self.init(integer, 1)
   }
   

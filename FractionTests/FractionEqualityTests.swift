@@ -3,14 +3,14 @@ import Fraction
 
 class FractionEqualityTests : XCTestCase {
   func test_equals_forIntegers() {
-    XCTAssertEqual(Fraction(1),   Fraction(1))
-    XCTAssertEqual(Fraction(1,1), Fraction(1))
-    XCTAssertEqual(Fraction(1),   Fraction(1,1))
+    XCTAssertEqual(Fraction(int: 1),   Fraction(int: 1))
+    XCTAssertEqual(Fraction(1,1), Fraction(int: 1))
+    XCTAssertEqual(Fraction(int: 1),   Fraction(1,1))
     XCTAssertEqual(Fraction(1,1), Fraction(1,1))
     XCTAssertEqual(Fraction(2,1), Fraction(2,1))
-    XCTAssertEqual(Fraction(2,1), Fraction(2))
-    XCTAssertEqual(Fraction(2), Fraction(2))
-    XCTAssertNotEqual(Fraction(2,1), Fraction(1))
+    XCTAssertEqual(Fraction(2,1), Fraction(int: 2))
+    XCTAssertEqual(Fraction(int: 2), Fraction(int: 2))
+    XCTAssertNotEqual(Fraction(2,1), Fraction(int: 1))
   }
   
   func test_equals_forFractions() {
