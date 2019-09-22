@@ -2,7 +2,6 @@ import XCTest
 import Fraction
 
 class FractionEqualityTests : XCTestCase {
-  // Equality test list
   func test_equals_forIntegers() {
     XCTAssertEqual(Fraction(1),   Fraction(1))
     XCTAssertEqual(Fraction(1,1), Fraction(1))
