@@ -50,6 +50,11 @@ func getDivisorsOf(_ n: Int) -> [Int] {
   return (1...n).filter { n % $0 == 0 }
 }
 
+func getCommonDivisorsOf(_ a: Int, _ b: Int) -> [Int] {
+  let divisorsOfA = getDivisorsOf(a)
+  let divisorsOfB = getDivisorsOf(b)
+  return divisorsOfA.filter { divisorsOfB.contains($0) }
+}
 class DivisorsTests: XCTestCase {
   func test_getDivisors() {
     let expectedOutputByInput: [Int: [Int]] = [
@@ -74,7 +79,33 @@ class DivisorsTests: XCTestCase {
       XCTAssertEqual(getDivisorsOf(input), expectedOutput, "Expected divisors don't match for \(input).")
     }
   }
+  
+  func test_getCommonDivisors() {
+    let expectedOutputByInput: [(Int, Int, [Int])] = [
+      (1, 1, [1]),
+      (1, 2, [1]),
+      (1, 3, [1]),
+      (2, 3, [1]),
+      (2, 2, [1, 2]),
+      (3, 3, [1, 3]),
+      (2, 4, [1, 2]),
+      (2, 4, [1, 2]),
+      (2, 6, [1, 2]),
+      (3, 6, [1, 3]),
+      (2, 10, [1, 2]),
+      (4, 10, [1, 2]),
+      (5, 10, [1, 5]),
+      (10, 100, [1, 2, 5, 10]),
+      (11, 33, [1, 11]),
+      (12, 100, [1, 2, 4]),
+      (20, 100, [1, 2, 4, 5, 10, 20]),
+    ]
+    expectedOutputByInput.forEach { (a, b, expectedOutput) in
+      XCTAssertEqual(getCommonDivisorsOf(a, b), expectedOutput, "Expected common divisors don't match for (\(a),\(b)).")
+    }
+  }
 }
+
 
 // Creation Test List
 // (16,12) -> + 16/12 -> + 4/3 (simplifies denominator != 1)
