@@ -15,9 +15,13 @@ class FractionAdditionTests: XCTestCase {
     assertThatAdding(Fraction(1), and: Fraction(-2), gives: Fraction(-1))
   }
   
+//  func testSumContainingZero() {
+//    assertThatAdding(Fraction(0), and: Fraction(1,2), gives: Fraction(1,2))
+//    assertThatAdding(Fraction(1,2), and: Fraction(0), gives: Fraction(1,2))
+//    assertThatAdding(Fraction(1231,932), and: Fraction(0), gives: Fraction(1231,932))
+//  }
+  
   // Addition Test list
-  // 0 + 1 = 1 (zero plus smt)
-  // 1 + 0 = 1 (smt plus zero)
   // 0 + 1/2 = 1/2 (0 plus fraction)
   // 1/2 + 0 = 1/2 (fraction plus 0)
   // 1/2 + 1/2 = 1 (same denominator)
