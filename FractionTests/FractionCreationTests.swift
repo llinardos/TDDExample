@@ -3,14 +3,9 @@ import Fraction
 
 class FractionCreationTests: XCTestCase {
   func test_init_setsNumeratorAndDenominatorOk() {
-    let a = Fraction(1, 2)
-    XCTAssertTrue(a.numerator == 1 && a.denominator == 2)
-    
-    let b = Fraction(1, 3)
-    XCTAssertTrue(b.numerator == 1 && b.denominator == 3)
-    
-    let c = Fraction(3, 2)
-    XCTAssertTrue(c.numerator == 3 && c.denominator == 2)
+    assertThatFractionCreatedWithParams(1,  2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams(1,  3, becomes: (.positive, 1, 3))
+    assertThatFractionCreatedWithParams(3,  2, becomes: (.positive, 3, 2))
   }
   
   func test_init_simplifiesFraction() {
