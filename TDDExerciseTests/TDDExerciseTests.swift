@@ -7,18 +7,24 @@ struct Fraction {
   private var _isPositive: Bool
   
   init(_ numerator: Int, _ denominator: Int) {
-    let gdc = getGCDOf(numerator, denominator)
-    self.numerator = UInt(abs(numerator)/gdc)
-    self.denominator = UInt(abs(denominator)/gdc)
-    
-    if numerator < 0 && denominator > 0 {
-      _isPositive = false
-    } else if numerator > 0 && denominator < 0 {
-      _isPositive = false
+    if let gdc = getGCDOf(numerator, denominator) {
+      self.numerator = UInt(abs(numerator)/gdc)
+      self.denominator = UInt(abs(denominator)/gdc)
+      
+      if numerator < 0 && denominator > 0 {
+        _isPositive = false
+      } else if numerator > 0 && denominator < 0 {
+        _isPositive = false
+      } else {
+        _isPositive = true
+      }
     } else {
-      _isPositive = true
+      self.numerator = 0
+      self.denominator = 0
+      self._isPositive = false
     }
   }
+  
   func isPositive() -> Bool {
     return _isPositive
   }
@@ -99,8 +105,8 @@ func getCommonDivisorsOf(_ a: Int, _ b: Int) -> [Int] {
   return divisorsOfA.filter { divisorsOfB.contains($0) }
 }
 
-func getGCDOf(_ a: Int, _ b: Int) -> Int {
-  return getCommonDivisorsOf(a, b).max()!
+func getGCDOf(_ a: Int, _ b: Int) -> Int? {
+  return getCommonDivisorsOf(a, b).max()
 }
 
 class DivisorsTests: XCTestCase {
@@ -180,6 +186,12 @@ class DivisorsTests: XCTestCase {
     expectedOutputByInput.forEach { (a, b, expectedOutput) in
       XCTAssertEqual(getGCDOf(a, b), expectedOutput, "Expected common divisors don't match for (\(a),\(b)).")
     }
+  }
+  
+  func test_greatestCommonDivisorWithZeroAsArgs_returnsNil() {
+    XCTAssertEqual(getGCDOf(0, 1), nil)
+    XCTAssertEqual(getGCDOf(1, 0), nil)
+    XCTAssertEqual(getGCDOf(0, 0), nil)
   }
 }
 
