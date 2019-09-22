@@ -11,22 +11,25 @@ public struct Fraction {
   public var denominator: UInt
   public var sign: Sign
   
+  public init(_ sign: Sign, _ numerator: UInt, _ denominator: UInt) {
+    self.sign = sign
+    self.numerator = numerator
+    self.denominator = denominator
+  }
+  
   public init(_ numerator: Int, _ denominator: Int) {
     if let gdc = getGCDOf(numerator, denominator) {
-      self.numerator = UInt(abs(numerator)/gdc)
-      self.denominator = UInt(abs(denominator)/gdc)
+      let absReducedNumerator = UInt(abs(numerator)/gdc)
+      let absReducedDenominator = UInt(abs(denominator)/gdc)
       
-      if numerator < 0 && denominator > 0 {
+      var sign: Sign = .positive
+      if numerator < 0 && denominator > 0 || numerator > 0 && denominator < 0 {
         sign = .negative
-      } else if numerator > 0 && denominator < 0 {
-        sign = .negative
-      } else {
-        sign = .positive
       }
+      
+      self.init(sign, absReducedNumerator, absReducedDenominator)
     } else {
-      self.numerator = 0
-      self.denominator = 0
-      self.sign = .positive
+      self.init(.positive, 0, 0)
     }
   }
 }

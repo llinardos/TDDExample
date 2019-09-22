@@ -28,10 +28,10 @@ class FractionCreationTests: XCTestCase {
   }
   
   func test_init_handlesSigns() {
-    assertThatFraction((-1, 2), becomes: (.negative, 1, 2))
-    assertThatFraction((1, -2), becomes: (.negative, 1, 2))
+    assertThatFraction((-1, 2),  becomes: (.negative, 1, 2))
+    assertThatFraction((1, -2),  becomes: (.negative, 1, 2))
     assertThatFraction((-1, -2), becomes: (.positive, 1, 2))
-    assertThatFraction((1, 2), becomes: (.positive, 1, 2))
+    assertThatFraction((1, 2),   becomes: (.positive, 1, 2))
   }
   
   func assertThatFraction(_ params: (n: Int, d: Int), becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
