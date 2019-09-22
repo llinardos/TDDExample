@@ -17,7 +17,8 @@ extension Fraction {
     switch (a.sign, b.sign) {
     case (.positive, .positive): return aNumerator + bNumerator
     case (.positive, .negative): return aNumerator - bNumerator
-    default: return 0
+    case (.negative, .positive): return -aNumerator + bNumerator
+    case (.negative, .negative): return -aNumerator - bNumerator
     }
   }
 }
