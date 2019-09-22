@@ -47,14 +47,14 @@ class TDDExerciseTests: XCTestCase {
 }
 
 func getDivisorsOf(_ n: Int) -> [Int] {
-  return [1]
+  return (1...n).filter { n % $0 == 0 }
 }
 
 class DivisorsTests: XCTestCase {
   func test_getDivisors() {
     let expectedOutputByInput: [Int: [Int]] = [
       1: [1],
-//      2: [1,2],
+      2: [1,2],
 //      3: [1,3],
 //      4: [1,2,4],
 //      5: [1,5],
