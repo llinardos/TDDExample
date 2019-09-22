@@ -119,5 +119,4 @@ extension FractionCreationTests {
       file: file, line: line
     )
   }
-
 }
