@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC7109E923368218001061EC /* TDDExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7109DF23368218001061EC /* TDDExercise.framework */; };
+		AC7109E923368218001061EC /* Fraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7109DF23368218001061EC /* Fraction.framework */; };
 		AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109ED23368218001061EC /* FractionCreationTests.swift */; };
 		AC7109F023368218001061EC /* TDDExercise.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7109E223368218001061EC /* TDDExercise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109F92337AD47001061EC /* FractionAdditionTests.swift */; };
@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AC7109DF23368218001061EC /* TDDExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDDExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7109DF23368218001061EC /* Fraction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fraction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7109E223368218001061EC /* TDDExercise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDDExercise.h; sourceTree = "<group>"; };
 		AC7109E323368218001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC7109E823368218001061EC /* TDDExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7109E823368218001061EC /* FractionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7109ED23368218001061EC /* FractionCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionCreationTests.swift; sourceTree = "<group>"; };
 		AC7109EF23368218001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7109F92337AD47001061EC /* FractionAdditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionAdditionTests.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7109E923368218001061EC /* TDDExercise.framework in Frameworks */,
+				AC7109E923368218001061EC /* Fraction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +63,8 @@
 		AC7109D523368218001061EC = {
 			isa = PBXGroup;
 			children = (
-				AC7109E123368218001061EC /* TDDExercise */,
-				AC7109EC23368218001061EC /* TDDExerciseTests */,
+				AC7109E123368218001061EC /* Fraction */,
+				AC7109EC23368218001061EC /* FractionTests */,
 				AC7109E023368218001061EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,13 +72,13 @@
 		AC7109E023368218001061EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC7109DF23368218001061EC /* TDDExercise.framework */,
-				AC7109E823368218001061EC /* TDDExerciseTests.xctest */,
+				AC7109DF23368218001061EC /* Fraction.framework */,
+				AC7109E823368218001061EC /* FractionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC7109E123368218001061EC /* TDDExercise */ = {
+		AC7109E123368218001061EC /* Fraction */ = {
 			isa = PBXGroup;
 			children = (
 				AC7109E223368218001061EC /* TDDExercise.h */,
@@ -86,10 +86,10 @@
 				AC7109FF2337AE56001061EC /* Fraction.swift */,
 				AC710A012337AE6B001061EC /* Divisors.swift */,
 			);
-			path = TDDExercise;
+			path = Fraction;
 			sourceTree = "<group>";
 		};
-		AC7109EC23368218001061EC /* TDDExerciseTests */ = {
+		AC7109EC23368218001061EC /* FractionTests */ = {
 			isa = PBXGroup;
 			children = (
 				AC7109ED23368218001061EC /* FractionCreationTests.swift */,
@@ -98,7 +98,7 @@
 				AC7109FB2337ADC8001061EC /* DivisorsTests.swift */,
 				AC7109EF23368218001061EC /* Info.plist */,
 			);
-			path = TDDExerciseTests;
+			path = FractionTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,9 +115,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AC7109DE23368218001061EC /* TDDExercise */ = {
+		AC7109DE23368218001061EC /* Fraction */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC7109F323368218001061EC /* Build configuration list for PBXNativeTarget "TDDExercise" */;
+			buildConfigurationList = AC7109F323368218001061EC /* Build configuration list for PBXNativeTarget "Fraction" */;
 			buildPhases = (
 				AC7109DA23368218001061EC /* Headers */,
 				AC7109DB23368218001061EC /* Sources */,
@@ -128,14 +128,14 @@
 			);
 			dependencies = (
 			);
-			name = TDDExercise;
+			name = Fraction;
 			productName = TDDExercise;
-			productReference = AC7109DF23368218001061EC /* TDDExercise.framework */;
+			productReference = AC7109DF23368218001061EC /* Fraction.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AC7109E723368218001061EC /* TDDExerciseTests */ = {
+		AC7109E723368218001061EC /* FractionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC7109F623368218001061EC /* Build configuration list for PBXNativeTarget "TDDExerciseTests" */;
+			buildConfigurationList = AC7109F623368218001061EC /* Build configuration list for PBXNativeTarget "FractionTests" */;
 			buildPhases = (
 				AC7109E423368218001061EC /* Sources */,
 				AC7109E523368218001061EC /* Frameworks */,
@@ -146,9 +146,9 @@
 			dependencies = (
 				AC7109EB23368218001061EC /* PBXTargetDependency */,
 			);
-			name = TDDExerciseTests;
+			name = FractionTests;
 			productName = TDDExerciseTests;
-			productReference = AC7109E823368218001061EC /* TDDExerciseTests.xctest */;
+			productReference = AC7109E823368218001061EC /* FractionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,8 +182,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC7109DE23368218001061EC /* TDDExercise */,
-				AC7109E723368218001061EC /* TDDExerciseTests */,
+				AC7109DE23368218001061EC /* Fraction */,
+				AC7109E723368218001061EC /* FractionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		AC7109EB23368218001061EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC7109DE23368218001061EC /* TDDExercise */;
+			target = AC7109DE23368218001061EC /* Fraction */;
 			targetProxy = AC7109EA23368218001061EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -369,7 +369,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TDDExercise/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Fraction/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,7 +395,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TDDExercise/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Fraction/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -415,7 +415,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TDDExerciseTests/Info.plist;
+				INFOPLIST_FILE = FractionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,7 +433,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TDDExerciseTests/Info.plist;
+				INFOPLIST_FILE = FractionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC7109F323368218001061EC /* Build configuration list for PBXNativeTarget "TDDExercise" */ = {
+		AC7109F323368218001061EC /* Build configuration list for PBXNativeTarget "Fraction" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC7109F423368218001061EC /* Debug */,
@@ -467,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC7109F623368218001061EC /* Build configuration list for PBXNativeTarget "TDDExerciseTests" */ = {
+		AC7109F623368218001061EC /* Build configuration list for PBXNativeTarget "FractionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC7109F723368218001061EC /* Debug */,

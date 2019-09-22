@@ -1,5 +1,5 @@
 import XCTest
-import TDDExercise
+import Fraction
 
 class DivisorsTests: XCTestCase {
   func test_getDivisorsOfZeroReturnsEmptyList() {

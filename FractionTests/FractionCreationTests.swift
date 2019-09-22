@@ -1,5 +1,5 @@
 import XCTest
-import TDDExercise
+import Fraction
 
 class FractionCreationTests: XCTestCase {
   func test_init_setsNumeratorAndDenominatorOk() {
