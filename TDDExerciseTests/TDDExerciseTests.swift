@@ -80,23 +80,23 @@ func getGCDOf(_ a: Int, _ b: Int) -> Int {
 
 class DivisorsTests: XCTestCase {
   func test_getDivisors() {
-    let expectedOutputByInput: [Int: [Int]] = [
-      1: [1],
-      2: [1,2],
-      3: [1,3],
-      4: [1,2,4],
-      5: [1,5],
-      6: [1,2,3,6],
-      7: [1,7],
-      8: [1,2,4,8],
-      9: [1, 3, 9],
-      10: [1, 2, 5, 10],
-      11: [1, 11],
-      12: [1, 2, 3, 4, 6, 12],
-      20: [1, 2, 4, 5, 10, 20],
-      33: [1, 3, 11, 33],
-      100: [1, 2, 4, 5, 10, 20, 25, 50, 100],
-      101: [1, 101]
+    let expectedOutputByInput: [(Int, [Int])] = [
+      (1, [1]),
+      (2, [1,2]),
+      (3, [1,3]),
+      (4, [1,2,4]),
+      (5, [1,5]),
+      (6, [1,2,3,6]),
+      (7, [1,7]),
+      (8, [1,2,4,8]),
+      (9, [1, 3, 9]),
+      (10, [1, 2, 5, 10]),
+      (11, [1, 11]),
+      (12, [1, 2, 3, 4, 6, 12]),
+      (20, [1, 2, 4, 5, 10, 20]),
+      (33, [1, 3, 11, 33]),
+      (100, [1, 2, 4, 5, 10, 20, 25, 50, 100]),
+      (101, [1, 101])
     ]
     expectedOutputByInput.forEach { (input, expectedOutput) in
       XCTAssertEqual(getDivisorsOf(input), expectedOutput, "Expected divisors don't match for \(input).")
