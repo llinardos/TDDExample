@@ -59,16 +59,13 @@ class FractionCreationTests: XCTestCase {
   
   func test_initWithInt() {
     assertThatFractionFromInteger(Fraction(0), becomes: (.positive, 0, 1))
+    assertThatFractionFromInteger(Fraction(1), becomes: (.positive, 1, 1))
+    assertThatFractionFromInteger(Fraction(2), becomes: (.positive, 2, 1))
+    assertThatFractionFromInteger(Fraction(45), becomes: (.positive, 45, 1))
+    assertThatFractionFromInteger(Fraction(-1), becomes: (.negative, 1, 1))
+    assertThatFractionFromInteger(Fraction(-2), becomes: (.negative, 2, 1))
+    assertThatFractionFromInteger(Fraction(-10), becomes: (.negative, 10, 1))
   }
-  
-  // Tests list
-  // Fraction(0) 0/1
-  // Fraction(1) 1/1
-  // Fraction(2) 2/1
-  // Fraction(45) 45/1
-  // Fraction(-1) -1/1
-  // Fraction(-2) -2/1
-  // Fraction(-10) -10/1
 }
 
 extension FractionCreationTests {
