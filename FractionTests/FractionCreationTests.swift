@@ -40,12 +40,13 @@ class FractionCreationTests: XCTestCase {
   }
 
   func test_initWithNumeratorZero_isZero() {
-    assertThatFractionIsZero(Fraction(0, 1))
-    assertThatFractionIsZero(Fraction(0, 2))
-    assertThatFractionIsZero(Fraction(0, 100))
-    assertThatFractionIsZero(Fraction(0, -1))
-    assertThatFractionIsZero(Fraction(0, -2))
-    assertThatFractionIsZero(Fraction(0, -100))
+    XCTAssertTrue(Fraction(0, 1).isZero())
+    XCTAssertTrue(Fraction(0, 2).isZero())
+    XCTAssertTrue(Fraction(0, 100).isZero())
+    XCTAssertTrue(Fraction(0, -1).isZero())
+    XCTAssertTrue(Fraction(0, -2).isZero())
+    XCTAssertTrue(Fraction(0, -100).isZero())
+    XCTAssertFalse(Fraction(1, 2).isZero())
   }
   
   func test_hasDenominatorZero_retursFalseForRegularFractions() {
@@ -92,14 +93,6 @@ extension FractionCreationTests {
     XCTAssertTrue(
       fraction == expected,
       "Fraction \(fraction) is not simplified to \(expected)",
-      file: file, line: line
-    )
-  }
-
-  func assertThatFractionIsZero(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
-    XCTAssertTrue(
-      f.isZero(),
-      "\(f) should be zero.",
       file: file, line: line
     )
   }
