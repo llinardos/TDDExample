@@ -8,6 +8,19 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionCreatedWithParams(3,  2, becomes: (.positive, 3, 2))
   }
   
+  func test_init_handlesSigns() {
+    assertThatFractionCreatedWithParams(-1,  2, becomes: (.negative, 1, 2))
+    assertThatFractionCreatedWithParams( 1, -2, becomes: (.negative, 1, 2))
+    assertThatFractionCreatedWithParams(-1, -2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams( 1,  2, becomes: (.positive, 1, 2))
+  }
+  
+  func test_initWithExplicitSign() {
+    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams(.negative, 1, 2, becomes: (.negative, 1, 2))
+    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
+  }
+  
   func test_init_simplifiesFraction() {
     let expectedNumeratorAndDenominatorForFraction: [((n: Int, d: Int), (n: Int, d: Int))] = [
       ((4, 2), (2, 1)),
@@ -20,19 +33,6 @@ class FractionCreationTests: XCTestCase {
       XCTAssertTrue(fraction.numerator == output.n && fraction.denominator == output.d,
                     "Fraction \(input.n)/\(input.d) should be simplified to \(output.n)/\(output.d)")
     }
-  }
-  
-  func test_init_handlesSigns() {
-    assertThatFractionCreatedWithParams(-1,  2, becomes: (.negative, 1, 2))
-    assertThatFractionCreatedWithParams( 1, -2, becomes: (.negative, 1, 2))
-    assertThatFractionCreatedWithParams(-1, -2, becomes: (.positive, 1, 2))
-    assertThatFractionCreatedWithParams( 1,  2, becomes: (.positive, 1, 2))
-  }
-  
-  func test_initWithExplicitSign() {
-    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
-    assertThatFractionCreatedWithParams(.negative, 1, 2, becomes: (.negative, 1, 2))
-    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
   }
 
   // Creation Test List
@@ -55,7 +55,7 @@ extension FractionCreationTests {
   func assertThatFractionCreatedWithParams(_ n: Int, _ d: Int, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
     let fraction = Fraction(n, d)
     XCTAssertTrue(
-      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
+      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == expected.sign,
       "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
       file: file, line: line
     )
