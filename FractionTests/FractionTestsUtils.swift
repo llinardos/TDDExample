@@ -1,29 +1,27 @@
 import XCTest
 import Fraction
 
-func fractionAsString(_ sign: Fraction.Sign, _ n: UInt, _ d: UInt) -> String {
-  let signAsString: String = {
-    switch sign {
-    case .positive: return "+"
-    case .negative: return "-"
-    }
-  }()
-  return "\(signAsString)\(n)/\(d)"
-}
-
-func fractionAsString(_ f: Fraction) -> String {
-  return fractionAsString(f.sign, f.numerator, f.denominator)
+extension Fraction: CustomStringConvertible {
+  public var description: String {
+    let signAsString: String = {
+      switch self.sign {
+      case .positive: return "+"
+      case .negative: return "-"
+      }
+    }()
+    return "\(signAsString)\(self.numerator)/\(self.denominator)"
+  }
 }
 
 class FractionUtilsTests: XCTestCase {
   func testFractionAsString() {
-    XCTAssertEqual(fractionAsString(.positive, 1, 2), "+1/2")
-    XCTAssertEqual(fractionAsString(.negative, 1, 2), "-1/2")
-    XCTAssertEqual(fractionAsString(.positive, 10, 12), "+10/12")
-    XCTAssertEqual(fractionAsString(.negative, 10, 12), "-10/12")
+    XCTAssertEqual(Fraction(.positive, 1, 2).description, "+1/2")
+    XCTAssertEqual(Fraction(.negative, 1, 2).description, "-1/2")
+    XCTAssertEqual(Fraction(.positive, 10, 12).description, "+10/12")
+    XCTAssertEqual(Fraction(.negative, 10, 12).description, "-10/12")
     
-    XCTAssertEqual(fractionAsString(Fraction(1, 2)), "+1/2")
-    XCTAssertEqual(fractionAsString(Fraction(-1, 2)), "-1/2")
+    XCTAssertEqual(Fraction(1, 2).description, "+1/2")
+    XCTAssertEqual(Fraction(-1, 2).description, "-1/2")
   }
 }
 

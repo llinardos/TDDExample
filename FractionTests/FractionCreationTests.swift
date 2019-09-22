@@ -3,30 +3,30 @@ import Fraction
 
 class FractionCreationTests: XCTestCase {
   func test_init_setsNumeratorAndDenominatorOk() {
-    assertThatFractionCreatedWith(numerator: 1, denominator: 2, becomes: (.positive, 1, 2))
-    assertThatFractionCreatedWith(numerator: 1, denominator: 3, becomes: (.positive, 1, 3))
-    assertThatFractionCreatedWith(numerator: 3, denominator: 2, becomes: (.positive, 3, 2))
+    assertThatFractionCreatedWith(numerator: 1, denominator: 2, becomes: Fraction(.positive, 1, 2))
+    assertThatFractionCreatedWith(numerator: 1, denominator: 3, becomes: Fraction(.positive, 1, 3))
+    assertThatFractionCreatedWith(numerator: 3, denominator: 2, becomes: Fraction(.positive, 3, 2))
   }
   
   func test_init_handlesSigns() {
-    assertThatFractionCreatedWith(numerator:-1, denominator: 2, becomes: (.negative, 1, 2))
-    assertThatFractionCreatedWith(numerator: 1, denominator:-2, becomes: (.negative, 1, 2))
-    assertThatFractionCreatedWith(numerator:-1, denominator:-2, becomes: (.positive, 1, 2))
-    assertThatFractionCreatedWith(numerator: 1, denominator: 2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWith(numerator:-1, denominator: 2, becomes: Fraction(.negative, 1, 2))
+    assertThatFractionCreatedWith(numerator: 1, denominator:-2, becomes: Fraction(.negative, 1, 2))
+    assertThatFractionCreatedWith(numerator:-1, denominator:-2, becomes: Fraction(.positive, 1, 2))
+    assertThatFractionCreatedWith(numerator: 1, denominator: 2, becomes: Fraction(.positive, 1, 2))
   }
   
   func test_initWithExplicitSign() {
-    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
-    assertThatFractionCreatedWithParams(.negative, 1, 2, becomes: (.negative, 1, 2))
-    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: (.positive, 1, 2))
+    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: Fraction(.positive, 1, 2))
+    assertThatFractionCreatedWithParams(.negative, 1, 2, becomes: Fraction(.negative, 1, 2))
+    assertThatFractionCreatedWithParams(.positive, 1, 2, becomes: Fraction(.positive, 1, 2))
   }
   
   func test_init_simplifiesFraction() {
-    assertThatFractionCreatedWithParams(4, 2, simplifiesTo: (.positive, 2, 1))
-    assertThatFractionCreatedWithParams(2, 4, simplifiesTo: (.positive, 1, 2))
-    assertThatFractionCreatedWithParams(16, 12, simplifiesTo: (.positive, 4, 3))
-    assertThatFractionCreatedWithParams(12, 16, simplifiesTo: (.positive, 3, 4))
-    assertThatFractionCreatedWithParams(-12, 16, simplifiesTo: (.negative, 3, 4))
+    assertThatFractionCreatedWithParams(4, 2, simplifiesTo: Fraction(.positive, 2, 1))
+    assertThatFractionCreatedWithParams(2, 4, simplifiesTo: Fraction(.positive, 1, 2))
+    assertThatFractionCreatedWithParams(16, 12, simplifiesTo: Fraction(.positive, 4, 3))
+    assertThatFractionCreatedWithParams(12, 16, simplifiesTo: Fraction(.positive, 3, 4))
+    assertThatFractionCreatedWithParams(-12, 16, simplifiesTo: Fraction(.negative, 3, 4))
   }
   
   func test_initWithDenominatorZero_setZeroDashZeroAndSetsHasDenominatorZeroToTrue() {
@@ -58,40 +58,40 @@ class FractionCreationTests: XCTestCase {
   }
   
   func test_initWithInt() {
-    assertThatFractionFromInteger(Fraction(0), becomes: (.positive, 0, 1))
-    assertThatFractionFromInteger(Fraction(1), becomes: (.positive, 1, 1))
-    assertThatFractionFromInteger(Fraction(2), becomes: (.positive, 2, 1))
-    assertThatFractionFromInteger(Fraction(45), becomes: (.positive, 45, 1))
-    assertThatFractionFromInteger(Fraction(-1), becomes: (.negative, 1, 1))
-    assertThatFractionFromInteger(Fraction(-2), becomes: (.negative, 2, 1))
-    assertThatFractionFromInteger(Fraction(-10), becomes: (.negative, 10, 1))
+    assertThatFractionFromInteger(Fraction(0), becomes: Fraction(.positive, 0, 1))
+    assertThatFractionFromInteger(Fraction(1), becomes: Fraction(.positive, 1, 1))
+    assertThatFractionFromInteger(Fraction(2), becomes: Fraction(.positive, 2, 1))
+    assertThatFractionFromInteger(Fraction(45), becomes: Fraction(.positive, 45, 1))
+    assertThatFractionFromInteger(Fraction(-1), becomes: Fraction(.negative, 1, 1))
+    assertThatFractionFromInteger(Fraction(-2), becomes: Fraction(.negative, 2, 1))
+    assertThatFractionFromInteger(Fraction(-10), becomes: Fraction(.negative, 10, 1))
   }
 }
 
 extension FractionCreationTests {
-  func assertThatFractionCreatedWith(numerator n: Int, denominator d: Int, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+  func assertThatFractionCreatedWith(numerator n: Int, denominator d: Int, becomes expected: Fraction, file: StaticString = #file, line: UInt = #line) {
     let fraction = Fraction(n, d)
     XCTAssertTrue(
-      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == expected.sign,
-      "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
+      fraction == expected,
+      "Fraction \(fraction) is not \(expected)",
       file: file, line: line
     )
   }
   
-  func assertThatFractionCreatedWithParams(_ s: Fraction.Sign, _ n: UInt, _ d: UInt, becomes expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+  func assertThatFractionCreatedWithParams(_ s: Fraction.Sign, _ n: UInt, _ d: UInt, becomes expected: Fraction, file: StaticString = #file, line: UInt = #line) {
     let fraction = Fraction(s, n, d)
     XCTAssertTrue(
-      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
-      "Fraction \(fractionAsString(fraction)) is not \(fractionAsString(expected.sign, expected.n, expected.d))",
+      fraction == expected,
+      "Fraction \(fraction) is not \(expected)",
       file: file, line: line
     )
   }
   
-  func assertThatFractionCreatedWithParams(_ n: Int, _ d: Int, simplifiesTo expected: (sign: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+  func assertThatFractionCreatedWithParams(_ n: Int, _ d: Int, simplifiesTo expected: Fraction, file: StaticString = #file, line: UInt = #line) {
     let fraction = Fraction(n, d)
     XCTAssertTrue(
-      fraction.numerator == expected.n && fraction.denominator == expected.d && fraction.sign == fraction.sign,
-      "Fraction \(fractionAsString(fraction)) is not simplified to \(fractionAsString(expected.sign, expected.n, expected.d))",
+      fraction == expected,
+      "Fraction \(fraction) is not simplified to \(expected)",
       file: file, line: line
     )
   }
@@ -99,7 +99,7 @@ extension FractionCreationTests {
   func assertThatFractionIsZero(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
     XCTAssertTrue(
       f.numerator == 0 && f.denominator != 0 && !f.hasDenominatorZero(),
-      "\(fractionAsString(f)) should be zero.",
+      "\(f) should be zero.",
       file: file, line: line
     )
   }
@@ -107,15 +107,15 @@ extension FractionCreationTests {
   func assertThatFractionHasZeroDenominator(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
     XCTAssertTrue(
       f.numerator == 0 && f.denominator == 0 && f.hasDenominatorZero(),
-      "\(fractionAsString(f)) should has denominator zero.",
+      "\(f) should has denominator zero.",
       file: file, line: line
     )
   }
   
-  func assertThatFractionFromInteger(_ f: Fraction, becomes expected: (s: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
-    XCTAssertTrue(
-      f.numerator == expected.n && f.denominator == expected.d && f.sign == expected.s,
-      "\(fractionAsString(f)) should be \(fractionAsString(expected.s, expected.n, expected.d)).",
+  func assertThatFractionFromInteger(_ f: Fraction, becomes expected: Fraction, file: StaticString = #file, line: UInt = #line) {
+    XCTAssertEqual(
+      f, expected,
+      "\(f) should be \(expected).",
       file: file, line: line
     )
   }
