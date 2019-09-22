@@ -45,7 +45,17 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionHasZeroDenominator(Fraction(-100, 0))
     assertThatFractionHasZeroDenominator(Fraction(0, 0))
   }
-  
+
+  func test_initWithNumeratorZero_isZero() {
+    func assertThatFractionIsZero(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
+      XCTAssertTrue(
+        f.numerator == 0 && f.denominator != 0 && !f.hasDenominatorZero(),
+        "\(fractionAsString(f)) should be zero.",
+        file: file, line: line
+      )
+    }
+    assertThatFractionIsZero(Fraction(0, 1))
+  }
   
 
   // Creation Test List

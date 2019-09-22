@@ -18,19 +18,26 @@ public struct Fraction {
   }
   
   public init(_ numerator: Int, _ denominator: Int) {
-    if let gdc = getGCDOf(numerator, denominator) {
-      let absReducedNumerator = UInt(abs(numerator)/gdc)
-      let absReducedDenominator = UInt(abs(denominator)/gdc)
-      
-      var sign: Sign = .positive
-      if numerator < 0 && denominator > 0 || numerator > 0 && denominator < 0 {
-        sign = .negative
-      }
-      
-      self.init(sign, absReducedNumerator, absReducedDenominator)
-    } else {
+    if denominator == 0 {
       self.init(.positive, 0, 0)
+      return
     }
+    
+    if numerator == 0 {
+      self.init(.positive, 0, 1)
+      return
+    }
+    
+    let gdc = getGCDOf(numerator, denominator)!
+    let absReducedNumerator = UInt(abs(numerator)/gdc)
+    let absReducedDenominator = UInt(abs(denominator)/gdc)
+      
+    var sign: Sign = .positive
+    if numerator < 0 && denominator > 0 || numerator > 0 && denominator < 0 {
+      sign = .negative
+    }
+      
+    self.init(sign, absReducedNumerator, absReducedDenominator)
   }
   
   public func hasDenominatorZero() -> Bool {
