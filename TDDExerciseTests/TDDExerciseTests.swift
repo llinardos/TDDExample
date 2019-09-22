@@ -67,9 +67,6 @@ class TDDExerciseTests: XCTestCase {
 
 
 // Creation Test List
-// (-1,2) = - 1/2 (negative numerator and positive denominator)
-// (1,-2) = - 1/2 (positive numerator and negative denominator)
-// -1/-2 = + 1/2 (negative numerator and negative denominator)
 // 1/0 = ERROR (denominator = 0)
 // 2/0 = ERROR (denominator = 0)
 // 100/0 = ERROR (denominator = 0)
@@ -85,6 +82,8 @@ class TDDExerciseTests: XCTestCase {
 // 0/-100 = zero
 
 func getDivisorsOf(_ n: Int) -> [Int] {
+  guard n != 0 else { return [] }
+  
   let positiveFactors = (1...abs(n)).filter { n % $0 == 0 }
   if n > 0 {
     return positiveFactors
@@ -105,6 +104,15 @@ func getGCDOf(_ a: Int, _ b: Int) -> Int {
 }
 
 class DivisorsTests: XCTestCase {
+  func test_getDivisorsOfZeroReturnsEmptyList() {
+    let input = 0
+    let expected: [Int] = []
+    
+    let result = getDivisorsOf(input)
+    
+    XCTAssertEqual(result, expected)
+  }
+  
   func test_getDivisors() {
     let positiveExpectedOutputByInput: [(Int, [Int])] = [
       (1, [1]),
