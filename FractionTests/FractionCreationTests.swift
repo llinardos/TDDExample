@@ -58,8 +58,7 @@ class FractionCreationTests: XCTestCase {
   }
   
   func test_initWithInt() {
-    let f = Fraction(0)
-    XCTAssertTrue(f.numerator == 0 && f.denominator == 1)
+    assertThatFractionFromInteger(Fraction(0), becomes: (.positive, 0, 1))
   }
   
   // Tests list
@@ -115,4 +114,13 @@ extension FractionCreationTests {
       file: file, line: line
     )
   }
+  
+  func assertThatFractionFromInteger(_ f: Fraction, becomes expected: (s: Fraction.Sign, n: UInt, d: UInt), file: StaticString = #file, line: UInt = #line) {
+    XCTAssertTrue(
+      f.numerator == expected.n && f.denominator == expected.d && f.sign == expected.s,
+      "\(fractionAsString(f)) should be \(fractionAsString(expected.s, expected.n, expected.d)).",
+      file: file, line: line
+    )
+  }
+
 }
