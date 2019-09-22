@@ -30,13 +30,6 @@ class FractionCreationTests: XCTestCase {
   }
   
   func test_initWithDenominatorZero_setZeroDashZeroAndSetsHasDenominatorZeroToTrue() {
-    func assertThatFractionHasZeroDenominator(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
-      XCTAssertTrue(
-        f.numerator == 0 && f.denominator == 0 && f.hasDenominatorZero(),
-        "\(fractionAsString(f)) should has denominator zero.",
-        file: file, line: line
-      )
-    }
     assertThatFractionHasZeroDenominator(Fraction(1, 0))
     assertThatFractionHasZeroDenominator(Fraction(2, 0))
     assertThatFractionHasZeroDenominator(Fraction(100, 0))
@@ -47,13 +40,6 @@ class FractionCreationTests: XCTestCase {
   }
 
   func test_initWithNumeratorZero_isZero() {
-    func assertThatFractionIsZero(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
-      XCTAssertTrue(
-        f.numerator == 0 && f.denominator != 0 && !f.hasDenominatorZero(),
-        "\(fractionAsString(f)) should be zero.",
-        file: file, line: line
-      )
-    }
     assertThatFractionIsZero(Fraction(0, 1))
     assertThatFractionIsZero(Fraction(0, 2))
     assertThatFractionIsZero(Fraction(0, 100))
@@ -100,4 +86,19 @@ extension FractionCreationTests {
     )
   }
 
+  func assertThatFractionIsZero(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
+    XCTAssertTrue(
+      f.numerator == 0 && f.denominator != 0 && !f.hasDenominatorZero(),
+      "\(fractionAsString(f)) should be zero.",
+      file: file, line: line
+    )
+  }
+  
+  func assertThatFractionHasZeroDenominator(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
+    XCTAssertTrue(
+      f.numerator == 0 && f.denominator == 0 && f.hasDenominatorZero(),
+      "\(fractionAsString(f)) should has denominator zero.",
+      file: file, line: line
+    )
+  }
 }
