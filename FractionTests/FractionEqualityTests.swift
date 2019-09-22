@@ -35,8 +35,8 @@ class FractionEqualityTests : XCTestCase {
     XCTAssertEqual(Fraction(0,100),   Fraction(0,19410))
   }
   
-  // 0/1 == 0/1 true
-  // 0/1 == 0/2 true
-  // 1/0 == 1/0 false
-  // 2/0 == 1/0 false
+  func test_equals_forDenominatorIsZero() {
+    XCTAssertNotEqual(Fraction(1,0),   Fraction(1,0))
+    XCTAssertNotEqual(Fraction(2,0),   Fraction(1,0))
+  }
 }
