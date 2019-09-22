@@ -55,17 +55,12 @@ class FractionCreationTests: XCTestCase {
       )
     }
     assertThatFractionIsZero(Fraction(0, 1))
+    assertThatFractionIsZero(Fraction(0, 2))
+    assertThatFractionIsZero(Fraction(0, 100))
+    assertThatFractionIsZero(Fraction(0, -1))
+    assertThatFractionIsZero(Fraction(0, -2))
+    assertThatFractionIsZero(Fraction(0, -100))
   }
-  
-
-  // Creation Test List
-  // 0/0 = ERROR (numerator and denominator = 0)
-  // 0/1 = zero
-  // 0/2 = zero
-  // 0/100 = zero
-  // 0/-1 = zero
-  // 0/-2 = zero
-  // 0/-100 = zero
 }
 
 extension FractionCreationTests {
