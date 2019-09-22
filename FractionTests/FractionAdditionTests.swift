@@ -10,9 +10,7 @@ class FractionAdditionTests: XCTestCase {
     
     let sum = Fraction.sum(a, b)
     
-    XCTAssertEqual(sum.numerator, expected.numerator)
-    XCTAssertEqual(sum.denominator, expected.denominator)
-    XCTAssertEqual(sum.sign, expected.sign)
+    XCTAssertEqual(sum, expected)
   }
   
   // Addition Test list
