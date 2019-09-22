@@ -4,13 +4,16 @@ import Fraction
 class FractionAdditionTests: XCTestCase {
   // 0 + 0 = 0 (zero)
   func testSumOfIntegers() {
-    let a = Fraction(0)
-    let b = Fraction(0)
-    let expected = Fraction(0)
-    
+    assertThatAdding(Fraction(0), and: Fraction(0), gives: Fraction(0))
+  }
+  
+  func assertThatAdding(_ a: Fraction, and b: Fraction, gives expected: Fraction, file: StaticString = #file, line: UInt = #line) {
     let sum = Fraction.sum(a, b)
-    
-    XCTAssertEqual(sum, expected)
+    XCTAssertTrue(
+      sum == expected,
+      "Adding \(a) and \(b) should give \(expected) but gives \(sum)",
+      file: file, line: line
+    )
   }
   
   // Addition Test list
