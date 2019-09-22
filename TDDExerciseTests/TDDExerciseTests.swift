@@ -23,24 +23,18 @@ class TDDExerciseTests: XCTestCase {
     XCTAssertTrue(c.numerator == 3 && c.denominator == 2)
   }
   
-  func test_init_withNumeratorIsMultipleOfDenominator_simplifiesFraction() {
-    let a = Fraction(4, 2)
-    XCTAssertTrue(a.numerator == 2 && a.denominator == 1)
-  }
-  
-  func test_init_withDenominatorIsMultipleOfNumerator_simplifiesFraction() {
-    let a = Fraction(2, 4)
-    XCTAssertTrue(a.numerator == 1 && a.denominator == 2)
-  }
-  
-  func test_init_withNumeratorAndDenominatorHasCommonDivisor_simplifiesFraction() {
-    let a = Fraction(16, 12)
-    XCTAssertTrue(a.numerator == 4 && a.denominator == 3)
-  }
-  
-  func test_init_withDenominatorAndNumeratorHasCommonDivisor_simplifiesFraction() {
-    let a = Fraction(12, 16)
-    XCTAssertTrue(a.numerator == 3 && a.denominator == 4)
+  func test_init_simplifiesFraction() {
+    let expectedNumeratorAndDenominatorForFraction: [((n: Int, d: Int), (n: Int, d: Int))] = [
+      ((4, 2), (2, 1)),
+      ((2, 4), (1, 2)),
+      ((16, 12), (4, 3)),
+      ((12, 16), (3, 4)),
+    ]
+    expectedNumeratorAndDenominatorForFraction.forEach { (input, output) in
+      let fraction = Fraction(input.n, input.d)
+      XCTAssertTrue(fraction.numerator == output.n && fraction.denominator == output.d,
+                    "Fraction \(fraction.numerator)/\(fraction.denominator) should be simplified to \(output.n)/\(output.d)")
+    }
   }
 }
 
