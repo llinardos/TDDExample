@@ -61,6 +61,15 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionIsZero(Fraction(0, -2))
     assertThatFractionIsZero(Fraction(0, -100))
   }
+  
+  func test_hasDenominatorZero_retursFalseForRegularFractions() {
+    XCTAssertFalse(Fraction(1, 3).hasDenominatorZero())
+    XCTAssertFalse(Fraction(-1, 3).hasDenominatorZero())
+    XCTAssertFalse(Fraction(-1, -3).hasDenominatorZero())
+    XCTAssertFalse(Fraction(1, -3).hasDenominatorZero())
+    XCTAssertFalse(Fraction(1121, 24123).hasDenominatorZero())
+    XCTAssertFalse(Fraction(-112151, 81759).hasDenominatorZero())
+  }
 }
 
 extension FractionCreationTests {
