@@ -33,14 +33,13 @@ class TDDExerciseTests: XCTestCase {
     expectedNumeratorAndDenominatorForFraction.forEach { (input, output) in
       let fraction = Fraction(input.n, input.d)
       XCTAssertTrue(fraction.numerator == output.n && fraction.denominator == output.d,
-                    "Fraction \(fraction.numerator)/\(fraction.denominator) should be simplified to \(output.n)/\(output.d)")
+                    "Fraction \(input.n)/\(input.d) should be simplified to \(output.n)/\(output.d)")
     }
   }
 }
 
 
 // Creation Test List
-// (12,16) -> + 12/16 -> + 3/4 (simplifies less than 1)
 // (-1,2) = - 1/2 (negative numerator and positive denominator)
 // (1,-2) = - 1/2 (positive numerator and negative denominator)
 // -1/-2 = + 1/2 (negative numerator and negative denominator)
