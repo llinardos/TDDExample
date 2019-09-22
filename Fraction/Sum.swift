@@ -16,6 +16,7 @@ extension Fraction {
     let bNumerator = Int(b.numerator)
     switch (a.sign, b.sign) {
     case (.positive, .positive): return aNumerator + bNumerator
+    case (.positive, .negative): return aNumerator - bNumerator
     default: return 0
     }
   }

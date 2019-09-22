@@ -2,9 +2,17 @@ import XCTest
 import Fraction
 
 class FractionAdditionTests: XCTestCase {
-  // 0 + 0 = 0 (zero)
   func testSumOfIntegers() {
     assertThatAdding(Fraction(0), and: Fraction(0), gives: Fraction(0))
+    assertThatAdding(Fraction(1), and: Fraction(0), gives: Fraction(1))
+    assertThatAdding(Fraction(0), and: Fraction(1), gives: Fraction(1))
+    assertThatAdding(Fraction(1), and: Fraction(1), gives: Fraction(2))
+    assertThatAdding(Fraction(0), and: Fraction(-1), gives: Fraction(-1))
+//    assertThatAdding(Fraction(-1), and: Fraction(0), gives: Fraction(-1))
+//    assertThatAdding(Fraction(-1), and: Fraction(-1), gives: Fraction(-2))
+//    assertThatAdding(Fraction(-1), and: Fraction(1), gives: Fraction(0))
+//    assertThatAdding(Fraction(-1), and: Fraction(2), gives: Fraction(1))
+//    assertThatAdding(Fraction(1), and: Fraction(-2), gives: Fraction(-2))
   }
   
   // Addition Test list
