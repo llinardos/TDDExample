@@ -46,8 +46,13 @@ class FractionCreationTests: XCTestCase {
     XCTAssertTrue(Fraction(0, -1).isZero())
     XCTAssertTrue(Fraction(0, -2).isZero())
     XCTAssertTrue(Fraction(0, -100).isZero())
-    XCTAssertFalse(Fraction(1, 2).isZero())
   }
+
+  func test_initWithNumeratorNotZero_isNotZero() {
+    XCTAssertFalse(Fraction(1, 2).isZero())
+    XCTAssertFalse(Fraction(-1, 2).isZero())
+  }
+  
   
   func test_hasDenominatorZero_retursFalseForRegularFractions() {
     XCTAssertFalse(Fraction(1, 3).hasDenominatorZero())
