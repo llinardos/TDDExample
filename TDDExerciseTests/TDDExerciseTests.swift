@@ -55,6 +55,11 @@ func getCommonDivisorsOf(_ a: Int, _ b: Int) -> [Int] {
   let divisorsOfB = getDivisorsOf(b)
   return divisorsOfA.filter { divisorsOfB.contains($0) }
 }
+
+func getGCDOf(_ a: Int, _ b: Int) -> Int {
+  return getCommonDivisorsOf(a, b).max()!
+}
+
 class DivisorsTests: XCTestCase {
   func test_getDivisors() {
     let expectedOutputByInput: [Int: [Int]] = [
@@ -102,6 +107,31 @@ class DivisorsTests: XCTestCase {
     ]
     expectedOutputByInput.forEach { (a, b, expectedOutput) in
       XCTAssertEqual(getCommonDivisorsOf(a, b), expectedOutput, "Expected common divisors don't match for (\(a),\(b)).")
+    }
+  }
+  
+  func test_greatestCommonDivisor() {
+    let expectedOutputByInput: [(Int, Int, Int)] = [
+      (1, 1, 1),
+      (1, 2, 1),
+      (1, 3, 1),
+      (2, 3, 1),
+      (2, 2, 2),
+      (3, 3, 3),
+      (2, 4, 2),
+      (2, 4, 2),
+      (2, 6, 2),
+      (3, 6, 3),
+      (2, 10, 2),
+      (4, 10, 2),
+      (5, 10, 5),
+      (10, 100, 10),
+      (11, 33, 11),
+      (12, 100, 4),
+      (20, 100, 20),
+    ]
+    expectedOutputByInput.forEach { (a, b, expectedOutput) in
+      XCTAssertEqual(getGCDOf(a, b), expectedOutput, "Expected common divisors don't match for (\(a),\(b)).")
     }
   }
 }
