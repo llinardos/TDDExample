@@ -11,6 +11,7 @@
 		AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109ED23368218001061EC /* FractionCreationTests.swift */; };
 		AC7109F023368218001061EC /* TDDExercise.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7109E223368218001061EC /* TDDExercise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109F92337AD47001061EC /* FractionAdditionTests.swift */; };
+		AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FB2337ADC8001061EC /* DivisorsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		AC7109ED23368218001061EC /* FractionCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionCreationTests.swift; sourceTree = "<group>"; };
 		AC7109EF23368218001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7109F92337AD47001061EC /* FractionAdditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionAdditionTests.swift; sourceTree = "<group>"; };
+		AC7109FB2337ADC8001061EC /* DivisorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisorsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				AC7109ED23368218001061EC /* FractionCreationTests.swift */,
 				AC7109F92337AD47001061EC /* FractionAdditionTests.swift */,
+				AC7109FB2337ADC8001061EC /* DivisorsTests.swift */,
 				AC7109EF23368218001061EC /* Info.plist */,
 			);
 			path = TDDExerciseTests;
@@ -206,6 +209,7 @@
 			files = (
 				AC7109EE23368218001061EC /* FractionCreationTests.swift in Sources */,
 				AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */,
+				AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
