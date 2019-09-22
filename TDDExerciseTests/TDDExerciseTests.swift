@@ -37,7 +37,32 @@ class TDDExerciseTests: XCTestCase {
     let a = Fraction(16, 12)
     XCTAssertTrue(a.numerator == 4 && a.denominator == 3)
   }
+  
+  func test_init_withDenominatorAndNumeratorHasCommonDivisor_simplifiesFraction() {
+    let a = Fraction(12, 16)
+    XCTAssertTrue(a.numerator == 3 && a.denominator == 4)
+  }
 }
+
+
+// Creation Test List
+// (12,16) -> + 12/16 -> + 3/4 (simplifies less than 1)
+// (-1,2) = - 1/2 (negative numerator and positive denominator)
+// (1,-2) = - 1/2 (positive numerator and negative denominator)
+// -1/-2 = + 1/2 (negative numerator and negative denominator)
+// 1/0 = ERROR (denominator = 0)
+// 2/0 = ERROR (denominator = 0)
+// 100/0 = ERROR (denominator = 0)
+// -1/0 = ERROR (denominator = 0)
+// -2/0 = ERROR (denominator = 0)
+// -100/0 = ERROR (denominator = 0)
+// 0/0 = ERROR (numerator and denominator = 0)
+// 0/1 = zero
+// 0/2 = zero
+// 0/100 = zero
+// 0/-1 = zero
+// 0/-2 = zero
+// 0/-100 = zero
 
 func getDivisorsOf(_ n: Int) -> [Int] {
   return (1...n).filter { n % $0 == 0 }
@@ -128,27 +153,6 @@ class DivisorsTests: XCTestCase {
     }
   }
 }
-
-
-// Creation Test List
-// (16,12) -> + 16/12 -> + 4/3 (simplifies denominator != 1)
-// (12,16) -> + 12/16 -> + 3/4 (simplifies less than 1)
-// (-1,2) = - 1/2 (negative numerator and positive denominator)
-// (1,-2) = - 1/2 (positive numerator and negative denominator)
-// -1/-2 = + 1/2 (negative numerator and negative denominator)
-// 1/0 = ERROR (denominator = 0)
-// 2/0 = ERROR (denominator = 0)
-// 100/0 = ERROR (denominator = 0)
-// -1/0 = ERROR (denominator = 0)
-// -2/0 = ERROR (denominator = 0)
-// -100/0 = ERROR (denominator = 0)
-// 0/0 = ERROR (numerator and denominator = 0)
-// 0/1 = zero
-// 0/2 = zero
-// 0/100 = zero
-// 0/-1 = zero
-// 0/-2 = zero
-// 0/-100 = zero
 
 // Addition Test list
 // 0 + 0 = 0 (zero)
