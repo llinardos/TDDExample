@@ -2,12 +2,25 @@ import XCTest
 import TDDExercise
 
 struct Fraction {
-  var numerator: Int
-  var denominator: Int
+  var numerator: UInt
+  var denominator: UInt
+  private var _isPositive: Bool
+  
   init(_ numerator: Int, _ denominator: Int) {
     let gdc = getGCDOf(numerator, denominator)
-    self.numerator = numerator/gdc
-    self.denominator = denominator/gdc
+    self.numerator = UInt(abs(numerator)/gdc)
+    self.denominator = UInt(abs(denominator)/gdc)
+    
+    if numerator < 0 && denominator > 0 {
+      _isPositive = false
+    } else if numerator > 0 && denominator < 0 {
+      _isPositive = false
+    } else {
+      _isPositive = true
+    }
+  }
+  func isPositive() -> Bool {
+    return _isPositive
   }
 }
 
@@ -35,6 +48,20 @@ class TDDExerciseTests: XCTestCase {
       XCTAssertTrue(fraction.numerator == output.n && fraction.denominator == output.d,
                     "Fraction \(input.n)/\(input.d) should be simplified to \(output.n)/\(output.d)")
     }
+  }
+  
+  func test_init_handlesSigns() {
+    let a = Fraction(-1, 2)
+    XCTAssertTrue(a.numerator == 1 && a.denominator == 2 && !a.isPositive())
+    
+    let b = Fraction(1, -2)
+    XCTAssertTrue(b.numerator == 1 && b.denominator == 2 && !b.isPositive())
+    
+    let c = Fraction(-1, -2)
+    XCTAssertTrue(c.numerator == 1 && c.denominator == 2 && c.isPositive())
+    
+    let d = Fraction(1, 2)
+    XCTAssertTrue(d.numerator == 1 && d.denominator == 2 && d.isPositive())
   }
 }
 
