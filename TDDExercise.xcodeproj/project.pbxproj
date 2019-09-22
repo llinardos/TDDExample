@@ -13,6 +13,8 @@
 		AC7109FA2337AD47001061EC /* FractionAdditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109F92337AD47001061EC /* FractionAdditionTests.swift */; };
 		AC7109FC2337ADC8001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FB2337ADC8001061EC /* DivisorsTests.swift */; };
 		AC7109FE2337AE10001061EC /* FractionTestsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */; };
+		AC710A002337AE56001061EC /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7109FF2337AE56001061EC /* Fraction.swift */; };
+		AC710A022337AE6B001061EC /* Divisors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A012337AE6B001061EC /* Divisors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		AC7109F92337AD47001061EC /* FractionAdditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionAdditionTests.swift; sourceTree = "<group>"; };
 		AC7109FB2337ADC8001061EC /* DivisorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisorsTests.swift; sourceTree = "<group>"; };
 		AC7109FD2337AE10001061EC /* FractionTestsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionTestsUtils.swift; sourceTree = "<group>"; };
+		AC7109FF2337AE56001061EC /* Fraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fraction.swift; sourceTree = "<group>"; };
+		AC710A012337AE6B001061EC /* Divisors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divisors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				AC7109E223368218001061EC /* TDDExercise.h */,
 				AC7109E323368218001061EC /* Info.plist */,
+				AC7109FF2337AE56001061EC /* Fraction.swift */,
+				AC710A012337AE6B001061EC /* Divisors.swift */,
 			);
 			path = TDDExercise;
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 				TargetAttributes = {
 					AC7109DE23368218001061EC = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					AC7109E723368218001061EC = {
 						CreatedOnToolsVersion = 10.3;
@@ -203,6 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC710A022337AE6B001061EC /* Divisors.swift in Sources */,
+				AC710A002337AE56001061EC /* Fraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +362,7 @@
 		AC7109F423368218001061EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -369,6 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.kanobius.sandbox.TDDExercise;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,6 +388,7 @@
 		AC7109F523368218001061EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -401,6 +413,7 @@
 		AC7109F723368218001061EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TDDExerciseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,6 +431,7 @@
 		AC7109F823368218001061EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TDDExerciseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

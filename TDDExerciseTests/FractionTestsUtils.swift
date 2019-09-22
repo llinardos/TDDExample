@@ -1,4 +1,5 @@
 import XCTest
+import TDDExercise
 
 func fractionAsString(_ sign: Fraction.Sign, _ n: UInt, _ d: UInt) -> String {
   let signAsString: String = {

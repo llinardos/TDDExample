@@ -1,40 +1,6 @@
 import XCTest
 import TDDExercise
 
-struct Fraction {
-  enum Sign {
-    case positive
-    case negative
-  }
-  var numerator: UInt
-  var denominator: UInt
-  
-  var sign: Sign
-  
-  init(_ numerator: Int, _ denominator: Int) {
-    if let gdc = getGCDOf(numerator, denominator) {
-      self.numerator = UInt(abs(numerator)/gdc)
-      self.denominator = UInt(abs(denominator)/gdc)
-      
-      if numerator < 0 && denominator > 0 {
-        sign = .negative
-      } else if numerator > 0 && denominator < 0 {
-        sign = .negative
-      } else {
-        sign = .positive
-      }
-    } else {
-      self.numerator = 0
-      self.denominator = 0
-      self.sign = .positive
-    }
-  }
-  
-  func isPositive() -> Bool {
-    return sign == .positive
-  }
-}
-
 class FractionCreationTests: XCTestCase {
   func test_init_setsNumeratorAndDenominatorOk() {
     let a = Fraction(1, 2)
@@ -91,26 +57,4 @@ class FractionCreationTests: XCTestCase {
   // 0/-1 = zero
   // 0/-2 = zero
   // 0/-100 = zero
-}
-
-func getDivisorsOf(_ n: Int) -> [Int] {
-  guard n != 0 else { return [] }
-  
-  let positiveFactors = (1...abs(n)).filter { n % $0 == 0 }
-  if n > 0 {
-    return positiveFactors
-  } else {
-    let negativeFactors = positiveFactors.map { -$0 }
-    return positiveFactors + negativeFactors
-  }
-}
-
-func getCommonDivisorsOf(_ a: Int, _ b: Int) -> [Int] {
-  let divisorsOfA = getDivisorsOf(a)
-  let divisorsOfB = getDivisorsOf(b)
-  return divisorsOfA.filter { divisorsOfB.contains($0) }
-}
-
-func getGCDOf(_ a: Int, _ b: Int) -> Int? {
-  return getCommonDivisorsOf(a, b).max()
 }

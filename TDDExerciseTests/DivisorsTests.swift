@@ -1,4 +1,5 @@
 import XCTest
+import TDDExercise
 
 class DivisorsTests: XCTestCase {
   func test_getDivisorsOfZeroReturnsEmptyList() {
