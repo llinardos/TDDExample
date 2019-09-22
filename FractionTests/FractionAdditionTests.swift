@@ -1,8 +1,21 @@
 import XCTest
+import Fraction
 
 class FractionAdditionTests: XCTestCase {
-  // Addition Test list
   // 0 + 0 = 0 (zero)
+  func testSumOfIntegers() {
+    let a = Fraction(0)
+    let b = Fraction(0)
+    let expected = Fraction(0)
+    
+    let sum = Fraction.sum(a, b)
+    
+    XCTAssertEqual(sum.numerator, expected.numerator)
+    XCTAssertEqual(sum.denominator, expected.denominator)
+    XCTAssertEqual(sum.sign, expected.sign)
+  }
+  
+  // Addition Test list
   // 0 + 1 = 1 (zero plus smt)
   // 1 + 0 = 1 (smt plus zero)
   // 0 + 1/2 = 1/2 (0 plus fraction)
