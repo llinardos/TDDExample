@@ -5,12 +5,12 @@ class FractionEqualityTests : XCTestCase {
   // Equality test list
   func test_equals_forIntegers() {
     XCTAssertEqual(Fraction(1), Fraction(1))
-//    XCTAssertEqual(Fraction(1,1), Fraction(1))
-//    XCTAssertEqual(Fraction(1), Fraction(1,1))
-//    XCTAssertEqual(Fraction(1,1), Fraction(1,1))
-//    XCTAssertEqual(Fraction(2,1), Fraction(2,1))
-//    XCTAssertEqual(Fraction(2,1), Fraction(2))
-//    XCTAssertNotEqual(Fraction(2,1), Fraction(1))
+    XCTAssertEqual(Fraction(1,1), Fraction(1))
+    XCTAssertEqual(Fraction(1), Fraction(1,1))
+    XCTAssertEqual(Fraction(1,1), Fraction(1,1))
+    XCTAssertEqual(Fraction(2,1), Fraction(2,1))
+    XCTAssertEqual(Fraction(2,1), Fraction(2))
+    XCTAssertNotEqual(Fraction(2,1), Fraction(1))
   }
   // 1/1 == 1/1 true
   // 1/3 == 1/3 true
