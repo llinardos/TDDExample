@@ -58,7 +58,13 @@ class TDDExerciseTests: XCTestCase {
 // 0/-100 = zero
 
 func getDivisorsOf(_ n: Int) -> [Int] {
-  return (1...n).filter { n % $0 == 0 }
+  let positiveFactors = (1...abs(n)).filter { n % $0 == 0 }
+  if n > 0 {
+    return positiveFactors
+  } else {
+    let negativeFactors = positiveFactors.map { -$0 }
+    return positiveFactors + negativeFactors
+  }
 }
 
 func getCommonDivisorsOf(_ a: Int, _ b: Int) -> [Int] {
@@ -73,7 +79,7 @@ func getGCDOf(_ a: Int, _ b: Int) -> Int {
 
 class DivisorsTests: XCTestCase {
   func test_getDivisors() {
-    let expectedOutputByInput: [(Int, [Int])] = [
+    let positiveExpectedOutputByInput: [(Int, [Int])] = [
       (1, [1]),
       (2, [1,2]),
       (3, [1,3]),
@@ -91,6 +97,13 @@ class DivisorsTests: XCTestCase {
       (100, [1, 2, 4, 5, 10, 20, 25, 50, 100]),
       (101, [1, 101])
     ]
+    let negativeExpectedOutputByInput: [(Int, [Int])] = positiveExpectedOutputByInput.map {
+      let n = $0.0
+      let positiveFactors = $0.1
+      let negativeFactors = positiveFactors.map { -$0 }
+      return (-n, positiveFactors + negativeFactors)
+    }
+    let expectedOutputByInput: [(Int, [Int])] = positiveExpectedOutputByInput + negativeExpectedOutputByInput
     expectedOutputByInput.forEach { (input, expectedOutput) in
       XCTAssertEqual(getDivisorsOf(input), expectedOutput, "Expected divisors don't match for \(input).")
     }
