@@ -40,6 +40,10 @@ public struct Fraction {
     self.init(sign, absReducedNumerator, absReducedDenominator)
   }
   
+  public init(_ integer: Int) {
+    self.init(integer, 1)
+  }
+  
   public func hasDenominatorZero() -> Bool {
     return denominator == 0
   }

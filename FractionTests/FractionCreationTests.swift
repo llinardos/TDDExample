@@ -56,6 +56,20 @@ class FractionCreationTests: XCTestCase {
     XCTAssertFalse(Fraction(1121, 24123).hasDenominatorZero())
     XCTAssertFalse(Fraction(-112151, 81759).hasDenominatorZero())
   }
+  
+  func test_initWithInt() {
+    let f = Fraction(0)
+    XCTAssertTrue(f.numerator == 0 && f.denominator == 1)
+  }
+  
+  // Tests list
+  // Fraction(0) 0/1
+  // Fraction(1) 1/1
+  // Fraction(2) 2/1
+  // Fraction(45) 45/1
+  // Fraction(-1) -1/1
+  // Fraction(-2) -2/1
+  // Fraction(-10) -10/1
 }
 
 extension FractionCreationTests {
