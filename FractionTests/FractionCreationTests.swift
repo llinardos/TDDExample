@@ -28,14 +28,27 @@ class FractionCreationTests: XCTestCase {
     assertThatFractionCreatedWithParams(12, 16, simplifiesTo: (.positive, 3, 4))
     assertThatFractionCreatedWithParams(-12, 16, simplifiesTo: (.negative, 3, 4))
   }
+  
+  func test_initWithDenominatorZero_setZeroDashZeroAndSetsHasDenominatorZeroToTrue() {
+    func assertThatFractionHasZeroDenominator(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
+      XCTAssertTrue(
+        f.numerator == 0 && f.denominator == 0 && f.hasDenominatorZero(),
+        "\(fractionAsString(f)) should has denominator zero.",
+        file: file, line: line
+      )
+    }
+    assertThatFractionHasZeroDenominator(Fraction(1, 0))
+    assertThatFractionHasZeroDenominator(Fraction(2, 0))
+    assertThatFractionHasZeroDenominator(Fraction(100, 0))
+    assertThatFractionHasZeroDenominator(Fraction(-1, 0))
+    assertThatFractionHasZeroDenominator(Fraction(-2, 0))
+    assertThatFractionHasZeroDenominator(Fraction(-100, 0))
+    assertThatFractionHasZeroDenominator(Fraction(0, 0))
+  }
+  
+  
 
   // Creation Test List
-  // 1/0 = ERROR (denominator = 0)
-  // 2/0 = ERROR (denominator = 0)
-  // 100/0 = ERROR (denominator = 0)
-  // -1/0 = ERROR (denominator = 0)
-  // -2/0 = ERROR (denominator = 0)
-  // -100/0 = ERROR (denominator = 0)
   // 0/0 = ERROR (numerator and denominator = 0)
   // 0/1 = zero
   // 0/2 = zero

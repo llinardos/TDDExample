@@ -32,4 +32,8 @@ public struct Fraction {
       self.init(.positive, 0, 0)
     }
   }
+  
+  public func hasDenominatorZero() -> Bool {
+    return denominator == 0
+  }
 }
