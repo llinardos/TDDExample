@@ -16,7 +16,7 @@
 		AC710A1F2337B02A001061EC /* Divisors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A012337AE6B001061EC /* Divisors.swift */; };
 		AC710A232337B068001061EC /* DivisorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A222337B068001061EC /* DivisorsTests.swift */; };
 		AC710A252337B08B001061EC /* Divisors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC710A082337B01F001061EC /* Divisors.framework */; };
-		AC710A272337E541001061EC /* Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A262337E541001061EC /* Sum.swift */; };
+		AC710A272337E541001061EC /* Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A262337E541001061EC /* Addition.swift */; };
 		AC710A292337E6D8001061EC /* FractionEqualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A282337E6D8001061EC /* FractionEqualityTests.swift */; };
 		AC710A2B2337E885001061EC /* Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A2A2337E885001061EC /* Equality.swift */; };
 		AC710A2D2337ECB0001061EC /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710A2C2337ECB0001061EC /* Print.swift */; };
@@ -54,7 +54,7 @@
 		AC710A102337B01F001061EC /* DivisorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivisorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC710A172337B020001061EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC710A222337B068001061EC /* DivisorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisorsTests.swift; sourceTree = "<group>"; };
-		AC710A262337E541001061EC /* Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sum.swift; sourceTree = "<group>"; };
+		AC710A262337E541001061EC /* Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addition.swift; sourceTree = "<group>"; };
 		AC710A282337E6D8001061EC /* FractionEqualityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionEqualityTests.swift; sourceTree = "<group>"; };
 		AC710A2A2337E885001061EC /* Equality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equality.swift; sourceTree = "<group>"; };
 		AC710A2C2337ECB0001061EC /* Print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			children = (
 				AC7109E323368218001061EC /* Info.plist */,
 				AC7109FF2337AE56001061EC /* Fraction.swift */,
-				AC710A262337E541001061EC /* Sum.swift */,
+				AC710A262337E541001061EC /* Addition.swift */,
 				AC710A2A2337E885001061EC /* Equality.swift */,
 				AC710A2C2337ECB0001061EC /* Print.swift */,
 			);
@@ -343,7 +343,7 @@
 			files = (
 				AC710A002337AE56001061EC /* Fraction.swift in Sources */,
 				AC710A2B2337E885001061EC /* Equality.swift in Sources */,
-				AC710A272337E541001061EC /* Sum.swift in Sources */,
+				AC710A272337E541001061EC /* Addition.swift in Sources */,
 				AC710A2D2337ECB0001061EC /* Print.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

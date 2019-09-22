@@ -34,7 +34,7 @@ class FractionAdditionTests: XCTestCase {
 
 extension FractionAdditionTests {
   func assertThatAdding(_ a: Fraction, and b: Fraction, gives expected: Fraction, file: StaticString = #file, line: UInt = #line) {
-    let sum = Fraction.sum(a, b)
+    let sum = Fraction.add(a, b)
     XCTAssertTrue(
       sum == expected,
       "Adding \(a) and \(b) should give \(expected) but gives \(sum)",
