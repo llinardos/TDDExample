@@ -5,16 +5,9 @@ struct Fraction {
   var numerator: Int
   var denominator: Int
   init(_ numerator: Int, _ denominator: Int) {
-    if numerator % denominator == 0 {
-      self.numerator = numerator/denominator
-      self.denominator = 1
-    } else if denominator % numerator == 0 {
-      self.numerator = 1
-      self.denominator = denominator/numerator
-    } else {
-      self.numerator = numerator
-      self.denominator = denominator
-    }
+    let gdc = getGCDOf(numerator, denominator)
+    self.numerator = numerator/gdc
+    self.denominator = denominator/gdc
   }
 }
 
@@ -40,10 +33,10 @@ class TDDExerciseTests: XCTestCase {
     XCTAssertTrue(a.numerator == 1 && a.denominator == 2)
   }
   
-//  func test_init_withNumeratorAndDenominatorHasCommonDivisor_simplifiesFraction() {
-//    let a = Fraction(16, 12)
-//    XCTAssertTrue(a.numerator == 4 && a.denominator == 3)
-//  }
+  func test_init_withNumeratorAndDenominatorHasCommonDivisor_simplifiesFraction() {
+    let a = Fraction(16, 12)
+    XCTAssertTrue(a.numerator == 4 && a.denominator == 3)
+  }
 }
 
 func getDivisorsOf(_ n: Int) -> [Int] {
