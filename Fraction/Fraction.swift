@@ -47,4 +47,8 @@ public struct Fraction {
   public func hasDenominatorZero() -> Bool {
     return denominator == 0
   }
+  
+  public func isZero() -> Bool {
+    return numerator == 0 && denominator != 0
+  }
 }

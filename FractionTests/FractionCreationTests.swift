@@ -98,7 +98,7 @@ extension FractionCreationTests {
 
   func assertThatFractionIsZero(_ f: Fraction, file: StaticString = #file, line: UInt = #line) {
     XCTAssertTrue(
-      f.numerator == 0 && f.denominator != 0 && !f.hasDenominatorZero(),
+      f.isZero(),
       "\(f) should be zero.",
       file: file, line: line
     )
