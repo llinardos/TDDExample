@@ -7,15 +7,6 @@ class FractionAdditionTests: XCTestCase {
     assertThatAdding(Fraction(0), and: Fraction(0), gives: Fraction(0))
   }
   
-  func assertThatAdding(_ a: Fraction, and b: Fraction, gives expected: Fraction, file: StaticString = #file, line: UInt = #line) {
-    let sum = Fraction.sum(a, b)
-    XCTAssertTrue(
-      sum == expected,
-      "Adding \(a) and \(b) should give \(expected) but gives \(sum)",
-      file: file, line: line
-    )
-  }
-  
   // Addition Test list
   // 0 + 1 = 1 (zero plus smt)
   // 1 + 0 = 1 (smt plus zero)
@@ -32,4 +23,15 @@ class FractionAdditionTests: XCTestCase {
   // -(1/2) + -(2/3) = (-1*3)/6 + (-2*2)/6 = (-3-4)/6 = -7/6 (negative fraction plus negative fraction)
   // 2/6 + 8/6 = 10/6 = 5/3 (irreducible)
   
+}
+
+extension FractionAdditionTests {
+  func assertThatAdding(_ a: Fraction, and b: Fraction, gives expected: Fraction, file: StaticString = #file, line: UInt = #line) {
+    let sum = Fraction.sum(a, b)
+    XCTAssertTrue(
+      sum == expected,
+      "Adding \(a) and \(b) should give \(expected) but gives \(sum)",
+      file: file, line: line
+    )
+  }
 }
